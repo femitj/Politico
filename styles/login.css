@@ -1,0 +1,142 @@
+#login-body{
+    background-color: rgb(124, 182, 124);
+}
+
+#login-area {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.login-form{
+    width: 70%;
+    margin-left: 15%;
+}
+  
+.form__navigation{
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .5rem 0;
+  }
+  .form__navigation div{
+    height: 2.5rem;
+    /* border: 1px solid; */
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative;
+    width: 2.5rem;
+  }
+  .form__navigation div:nth-of-type(1){
+    border-radius: 1rem 0 0 1rem;
+    background-color: rgba(9, 24, 44, 0.5);
+    border: 1px solid rgba(10, 24, 43, 0.5);
+  }
+  .form__navigation div:nth-of-type(2){
+    border-radius: 0 1rem 1rem 0;
+    background-color: #43b14b;
+    border: 1px solid #43b14b;
+  }
+  .form-link a{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+.login-box {
+    padding: 20px;
+    height: 350px;
+    width: auto;
+    border: 1px solid green;
+    border-radius: 2.5px;
+    color: white;
+    box-shadow: 5px 5px 10px -6px green;
+    position: relative;
+}
+ 
+.login-box {
+    display: flex;
+    flex: 0 1 auto; 
+    flex-direction: column;
+    padding: 46px;
+    background-color:#ffffff;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px
+  }
+
+  
+  .login-box h1 {
+    font-size: 40px;
+    border: none;
+    color:white;
+    text-align: center;
+  }
+  
+  .login-box p {
+    color: white;
+  }
+  
+  .login-box a:hover {
+    color: silver;
+    font-weight: 600;
+  }
+  
+  .login-div{
+    display: flex;
+    flex-direction: column;
+    height: 6.5rem;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+  input{
+    height: 3rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #8791a2;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 1.3rem;
+    /* padding: 5px 10px; */
+    color: white;
+  }
+  ::placeholder{
+    color: #8791a2;
+    font-weight: 100;
+    font-size: 1.23rem;
+    letter-spacing: 1px;
+    /* opacity: .3; */
+  }
+
+  button{
+    height: 3.5rem;
+    padding: 0 2.5rem;
+    border-radius: .3rem;
+    background-color: #43b14b;
+    border: 1px solid #43b14b;
+    color: white;
+    font-size: 1.2rem;
+}
+
+label{
+    font-weight: 200;
+    letter-spacing: .2rem;
+    font-size: 1.2rem;
+}
+
+#user-logo{
+    color: green;
+    font-size: 5em;
+}
