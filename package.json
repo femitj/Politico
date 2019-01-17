@@ -1,0 +1,23 @@
+{
+  "name": "politico",
+  "version": "1.0.0",
+  "description": "Politico is a simple RESTFUL application that enables citizens give their mandate to politicians running for different government offices while building trust in the process through transparency.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d UI"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/femitj/Politico.git"
+  },
+  "author": "Tijani Femi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/femitj/Politico/issues"
+  },
+  "homepage": "https://github.com/femitj/Politico#readme",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/login.css" /><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+<body id='login-body'>
+    <header>
+        <header>
+            <nav>
+                <div class="navigation__wrapper">
+                    <div class='container'>
+                    <div><a href="index.html" id="header-title">Politico</a></div>
+                    <div class='nav-link'><a href="./citizens.html">My Profile</a></div>
+                    </div>
+                </div>
+            </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="notification-div" id="notification-div">
+                <div id="close-notification">
+                    <span>x</span>
+                </div>
+                    <h5></h5>
+                    <p></p>
+            </div>
+    
+            
+        <form class="login-form" action='/UI/views/profile.html' method='GET'>
+
+            <div class="login-box">
+
+            <i class="fas fa-users" id='user-logo'></i>
+            <div class="form__navigation">
+                <div class='form-link'><a href="./views/resgister.html">Sign Up</a></div>
+                <div class='form-link'><a href="login.html">Log In</a></div>
+            </div>
+            
+
+            <div class="login-div">
+                <input type="email" placeholder="Email" id="email" name="email">
+            </div>
+            <div class="login-div">
+                <input type="password" placeholder="Password" id="password" name="password">
+            </div>
+            <div class="btn-div">
+                <button id="login-btn">Log In</button>
+            </div>
+            
+            </div>
+        </form>
+
+        <br>
+            </div>
+
+    </section>
+</body>
+</html>
