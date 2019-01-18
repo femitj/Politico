@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create political office</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/create-office.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navigation__wrapper">
+                <div class='container'>
+                <div><a href="../../index.html" id="header-title">Politico</a></div>
+                <!--<div class='nav-link'><a href="./.html">Create Government office</a></div>-->
+                <div class="nav-link dropdown">
+                        <button class="dropbtn">MORE 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./admin.html">Home</a>
+                            <a href="#">Create government office</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                        </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="gov-office">
+        <div class="container">
+            <p id='alert'></p>
+            <form id='office-form'>
+                <h2 id='head2'>Create a government office</h2>
+                <div>
+                        <label for='title'>Name</label>
+                        <input type='text' id='name' name='name' required>
+                </div>
+                <div>
+                        <label for='title'>Type</label>
+                        <input type='text' id='office-type' name='office-type' required>
+                </div>
+
+                <div id='submitButton'>
+                    <input type="submit" value='Submit'>
+                </div>
+    
+    
+            </form>
+            
+            <div id='show-party'>
+                <h2>Created Political Offices</h2>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th id='isbn'>ISBN#</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th></th>
+                        <th></th>  
+                    </tr>
+                </thead>
+                <tbody id='office-list'>
+                    <tr>
+                        <td>1</td>
+                        <td>Governor</td>
+                        <td>State</td>
+                        <td class="edit">edit</td>
+                        <td class="delete">delete</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>LG Chairman</td>
+                        <td>Local Government</td>
+                        <td class="edit">edit</td>
+                        <td class="delete">delete</td>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+
+        </div>        
+    </section>
+    
+        <br>
+</body>
+</html>
