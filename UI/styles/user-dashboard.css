@@ -1,0 +1,170 @@
+/*body{
+  background-color: rgba(223, 223, 223, 0.1);
+}*/
+
+#user-section{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+section a{
+    color: green;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.user-nav{
+    display: inline-block;
+    letter-spacing: 1.5px;
+}
+
+.box1{
+    display: inline-block;
+    padding-right: 40px;
+}
+
+#user-logo{
+    color: green;
+    font-size: 6em;
+}
+
+section{
+  margin: 10px;
+  height: 250px;
+}
+
+
+#show-party, 
+#show-candidates, 
+#show-votes,
+#join-election{
+  text-align: center;
+  margin: 25px;
+}
+#show-party p, 
+#show-candidates p, 
+#show-votes p,
+#join-election p{
+  color: green;
+  font-size: 20px;
+  border-bottom: 0.5px solid silver;
+}
+
+#show-party button, 
+#show-candidates button, 
+#show-votes button,
+#join-election button{
+  height: 2rem;
+  width: 15rem;
+  border: 1px solid #117d5a;
+  background: #117d5a;
+  border-radius: .25rem;
+  margin: -0.3rem 0;
+}
+
+#btn{
+  text-decoration: none;
+  color:white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.votes-count{
+  margin-left: 40%;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 40px 40px 30px 40px;
+  font-size: 3em;
+  border: 1.2px solid silver;
+  box-shadow: 3px 5px 5px -4px silver;
+  height: 75px;
+  width: 90px;
+}
+
+#politician-section{
+  margin-top: 70px;
+}
+/* The dropdown container */
+.dropdown {
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 25px; 
+    border: none;
+    outline: none;
+    color: green;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+   /* background-color: green;*/
+    font-weight: 600;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+@media screen and (max-width: 320px) {
+  /* comes into effect for screens less than or equal to 320 pixels */
+  .container {
+    width: 120px ;
+  }
+  .dropdown {
+    margin-right: 35px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* comes into effect for screens between 321 and 480 pixels (inclusive) */
+  .container {
+    width: 320px ;
+  }
+  .dropdown {
+    margin-right: 35px;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* comes into effect for screens larger than or equal to 481 pixels */
+  .container {
+    width: 480px ;
+  }
+  .dropdown {
+    margin-right: 35px;
+  }
+}
