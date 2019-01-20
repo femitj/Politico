@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/user-dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navigation__wrapper">
+                <div class='container'>
+                <div><a href="../../index.html" id="header-title">Politico</a></div>
+                <!--<div class='nav-link'><a href="./.html">Create Government office</a></div>-->
+                <div class="nav-link dropdown">
+                        <button class="dropbtn">&#9776; 
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Dashboard</a>
+                            <a href="./user-vote.html">Vote</a>
+                            <a href="./political-party.html">View Political Parties</a>
+                            <a href="./view-candidates.html">View Candidates</a>
+                            <a href="#">Logout</a>
+                        </div>
+                        </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="user-section">
+        <div class='container'>
+        <div class="box1">
+            <i class="fas fa-user" id="user-logo"></i>
+        </div>
+
+        <div class="box1">
+        <div><h2>Logged in:</h2></div>
+        <div><p>username</p></div>
+        <div><p>email@mail.com</p></div>
+        <div>
+            <div class="user-nav"><a href="prolile-edit">Edit Profile</a></div> 
+            <div class="user-nav"><a href="#">Change Password</a></div>
+        </div> 
+        </div>
+        </div>
+    </section>
+    
+    <section id="party-section">
+        <div class="container">
+            <div id="show-party">
+                <p>View Political Parties</p>
+                <button id="party-btn"><a id='btn' href="./political-party.html">Political Parties</a></button>
+                </div>
+        </div>
+    </section>
+
+    <section id="candi-section">
+        <div class="container">
+            <div id="show-candidates">
+                <p>View Candidates</p>
+                <button id="candi-btn"><a id='btn' href="./view-candidates.html">Candidates</a></button>
+                </div>
+        </div>
+    </section>
+
+    <section id="vote-section">
+        <div class="container">
+            <div id="show-votes">
+                <p>View Votes</p>
+                <div class="votes-count">3</div>
+                <button id="votes-btn"><a id='btn' href="./user-vote.html">Votes</a></button>
+                </div>
+        </div>
+    </section>
+
+    <section id="politician-section">
+        <div class="container">
+            <div id="join-election">
+                <h4>FOR POLITICIAN ONLY!</h4>
+                <p>Run for a political office</p>
+                <button id="votes-btn"><a id='btn' href="./candidate-form.html">Become a candidate</a></button>
+                </div>
+        </div>
+    </section>
+
+</body>
+</html>

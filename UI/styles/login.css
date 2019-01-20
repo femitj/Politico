@@ -1,5 +1,5 @@
 #login-body{
-    background-color: rgb(124, 182, 124);
+    background-color: white;
 }
 
 #login-area {
@@ -58,8 +58,7 @@
     padding: 20px;
     height: 350px;
     width: auto;
-    border: 1px solid green;
-    border-radius: 2.5px;
+    border: 1px solid #8791a2;
     color: white;
     box-shadow: 5px 5px 10px -6px green;
     position: relative;
@@ -73,7 +72,6 @@
     background-color:#ffffff;
     text-align: center;
     justify-content: center;
-    border-radius: 50px
   }
 
   
@@ -123,6 +121,9 @@
   button{
     height: 3.5rem;
     padding: 0 2.5rem;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 0px;
     border-radius: .3rem;
     background-color: #43b14b;
     border: 1px solid #43b14b;
@@ -139,4 +140,47 @@ label{
 #user-logo{
     color: green;
     font-size: 5em;
+}
+
+
+@media (max-width: 348px){
+  form{
+    padding: 1rem;
+  }
+
+  .form__navigation{
+    margin-top: 30px;
+  }
+  /*.form__inputs{
+        height: calc(100% - 5.5rem);
+  }*/
+  .login-div{
+    width: 100%;
+    margin-left: 0px;
+  }
+  .login-form{
+    min-width: 250px;
+    margin-right: 400px
+  }
+  
+  .container{
+    width:100%;
+  }
+  
+}
+@media (max-width: 769px){
+  .form__navigation{
+    margin-top: 25px;
+  }
+  .login-div{
+    width: 100%;
+    margin-left: 0px;
+  }
+  .login-form{
+    min-width: 250px;
+    margin-right: 500px;
+  }
+  .container{
+    width:100%;
+  }
 }
