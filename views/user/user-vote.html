@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vote Page</titl></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/view-candidates.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/vote-page.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../../styles/index.css" />
 </head>
 <body id="vote-body">
@@ -29,6 +29,35 @@
       </div>
     </nav>
     </header>
+
+    <section class="vote-section">
+      <div class="container">
+        <h2>Vote</h2>
+      <form id="vote-form" class="vote-wrapper">
+        <p>Enter choice of candidate and political office</p>
+        <div class="vote-details">
+          <label for='title'><h4>Name of candidate</h4></label>
+          <input type="text" name="name" id="candidates-name" placeholder="enter choice" equired>
+        </div>
+
+        <div class="vote-details">
+          <label for='title'><h4>Government office</h4></label>
+          <input type="text" name="name" id="office-name" placeholder="government office" required>
+        </div>
+
+        <div class="vote-details">
+            <label for='title'><h4>Political party</h4></label>
+            <input type="text" name="name" id="office-name" placeholder="political party" required>
+          </div>
+
+        <div id='submit-button'>
+            <input type="submit" value='Vote'>
+        </div>
+
+      </form>
+        
+      </div>
+    </section>
 
     <section class="party-section">
       <div class="container">

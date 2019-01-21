@@ -35,6 +35,10 @@ section{
   height: 250px;
 }
 
+#party-section{
+  margin-top: 10rem;
+}
+
 
 #show-party, 
 #show-candidates, 
