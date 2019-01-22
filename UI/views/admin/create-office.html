@@ -6,86 +6,97 @@
     <title>Create political office</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../../styles/create-office.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="navigation__wrapper">
-                <div class='container'>
-                <div><a href="../../index.html" id="header-title">Politico</a></div>
-                <!--<div class='nav-link'><a href="./.html">Create Government office</a></div>-->
-                <div class="nav-link dropdown">
-                        <button class="dropbtn">&#9776;
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="./admin.html">Dashboard</a>
-                            <a href="#">Create government office</a>
-                            <a href="#">Logout</a>
-                        </div>
-                        </div> 
-                </div>
-            </div>
-        </nav>
-    </header>
-    
-    <section id="gov-office">
-        <div class="container">
-            <p id='alert'></p>
-            <form id='office-form'>
-                <h2 id='head2'>Create a government office</h2>
-                <div>
-                        <label for='title'>Name</label>
-                        <input type='text' id='name' name='name' required>
-                </div>
-                <div>
-                        <label for='title'>Type</label>
-                        <input type='text' id='office-type' name='office-type' required>
-                </div>
+	<header>
+		<nav>
+			<div class="navigation__wrapper">
+				<div class='container'>
+				<div><a href="../../index.html" id="header-title">Politico</a></div>
+				<div class="nav-link dropdown">
+					<button class="dropbtn">&#9776;
+					</button>
+					<div class="dropdown-content">
+						<a href="./admin.html">Dashboard</a>
+						<a href="#">Create government office</a>
+						<a href="#">Logout</a>
+				</div>
+				</div> 
+				</div>
+			</div>
+		</nav>
+	</header>
 
-                <div id='submitButton'>
-                    <input type="submit" value='Submit'>
-                </div>
-    
-    
-            </form>
-            
-            <div id='show-party'>
-                <h2>Created Political Offices</h2>
-            <table class='table'>
-                <thead>
-                    <tr>
-                        <th id='isbn'>ISBN#</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th></th>
-                        <th></th>  
-                    </tr>
-                </thead>
-                <tbody id='office-list'>
-                    <tr>
-                        <td>1</td>
-                        <td>Governor</td>
-                        <td>State</td>
-                        <td class="edit">edit</td>
-                        <td class="delete">delete</td>
-                    </tr>
+	<section id="gov-office">
+		<div class="container">
+			<p id='alert'></p>
+			<form id='office-form'>
+				<h2 id='head2'>Create a government office</h2>
+				<div>
+							<label for='title'>Name</label>
+							<input type='text' id='name' name='name' required>
+				</div>
+				<div>
+							<label for='title'>Type</label>
+							<input type='text' id='office-type' name='office-type' required>
+				</div>
 
-                    <tr>
-                        <td>2</td>
-                        <td>LG Chairman</td>
-                        <td>Local Government</td>
-                        <td class="edit">edit</td>
-                        <td class="delete">delete</td>
-                    </tr>
-                </tbody>    
-            </table>
-        </div>
+				<div id='submitButton'>
+					<input type="submit" value='Submit'>
+				</div>
 
-        </div>        
-    </section>
-    
-        <br>
+
+			</form>
+
+			<div id='show-party'>
+			<h2>Created Political Offices</h2>
+			<table class='table'>
+			<thead>
+				<tr>
+					<th id='isbn'>ISBN#</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th></th>
+					<th></th>  
+				</tr>
+			</thead>
+			<tbody id='office-list'>
+				<tr>
+					<td>1</td>
+					<td>Governor</td>
+					<td>State</td>
+					<td class="edit">edit</td>
+					<td class="delete">delete</td>
+				</tr>
+
+				<tr>
+					<td>2</td>
+					<td>LG Chairman</td>
+					<td>Local Government</td>
+					<td class="edit">edit</td>
+					<td class="delete">delete</td>
+				</tr>
+			</tbody>    
+		</table>
+		</div>
+
+		</div>        
+	</section>
+
+	<br>
+	<footer>
+		<div class="container">
+		<div class='content'>	
+			<p class='copy'>Copyright &copy; 2019 Politico
+			<span>Politico is a product of Olutimedia, LLC.</span></p>
+		</div >
+		<div class='contents'>
+			<p class="terms">Terms of Service</p>
+			<p>Privacy Policy</p>	
+		</div>
+		</div>
+	</footer>
 </body>
 </html>

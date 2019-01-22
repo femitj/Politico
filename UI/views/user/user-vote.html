@@ -6,7 +6,7 @@
     <title>Vote Page</titl></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../../styles/vote-page.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/style.css" />
 </head>
 <body id="vote-body">
   <header>
@@ -14,7 +14,6 @@
       <div class="navigation__wrapper">
         <div class='container'>
         <div><a href="../../index.html" id="header-title">Politico</a></div>
-        <!--<div class='nav-link'><a href="./.html">Create Government office</a></div>-->
         <div class="nav-link dropdown">
         <button class="dropbtn">&#9776; 
             <i class="fa fa-caret-down"></i>
@@ -35,10 +34,6 @@
         <h2>Vote</h2>
       <form id="vote-form" class="vote-wrapper">
         <p>Enter choice of candidate and political office</p>
-        <div class="vote-details">
-          <label for='title'><h4>Name of candidate</h4></label>
-          <input type="text" name="name" id="candidates-name" placeholder="enter choice" equired>
-        </div>
 
         <div class="vote-details">
           <label for='title'><h4>Government office</h4></label>
@@ -46,9 +41,14 @@
         </div>
 
         <div class="vote-details">
-            <label for='title'><h4>Political party</h4></label>
-            <input type="text" name="name" id="office-name" placeholder="political party" required>
-          </div>
+          <label for='title'><h4>Political party</h4></label>
+          <input type="text" name="name" id="office-name" placeholder="political party" required>
+        </div>
+
+        <div class="vote-details">
+          <label for='title'><h4>Name of candidate</h4></label>
+          <input type="text" name="name" id="candidates-name" placeholder="enter choice" equired>
+        </div>  
 
         <div id='submit-button'>
             <input type="submit" value='Vote'>
@@ -123,6 +123,17 @@
   
     </section>
   
-  
+  <footer>
+    <div class="container">
+      <div class='content'>	
+      <p class='copy'>Copyright &copy; 2019 Politico
+          <span>Politico is a product of Olutimedia, LLC.</span></p>
+      </div >
+      <div class='contents'>
+      <p class="terms">Terms of Service</p>
+      <p>Privacy Policy</p>	
+      </div>
+      </div>
+    </footer>
 </body>
 </html>

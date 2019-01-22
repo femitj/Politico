@@ -23,7 +23,6 @@
   }
   .form__navigation div{
     height: 2.5rem;
-    /* border: 1px solid; */
     padding: 0 2rem;
     display: flex;
     align-items: center;
@@ -57,10 +56,9 @@
 
 .register-box {
     padding: 20px;
-    height: 350px;
+    height: 400px;
     width: auto;
     border: 1px solid #8791a2;
-    /*border-radius: 2.5px;*/
     color: white;
     box-shadow: 5px 5px 10px -6px green;
     position: relative;
@@ -74,7 +72,6 @@
     background-color:#ffffff;
     text-align: center;
     justify-content: center;
-    /*border-radius: 50px*/
   }
 
   
@@ -86,7 +83,7 @@
   }
   
   .register-box p {
-    color: white;
+    color: silver;
   }
   
   .register-box a:hover {
@@ -118,13 +115,13 @@
     font-weight: 150;
     font-size: 1.23rem;
     letter-spacing: 1px;
-    /* opacity: .3; */
+    opacity: .4;
   }
 
   button{
     height: 3.5rem;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-bottom: 0px;
     padding: 0 2.5rem;
     border-radius: .3rem;
@@ -153,9 +150,7 @@ label{
   .form__navigation{
     margin-top: 30px;
   }
-  /*.form__inputs{
-        height: calc(100% - 5.5rem);
-  }*/
+  
   .register-div{
     width: 100%;
     margin-left: 0px;
@@ -184,5 +179,14 @@ label{
   }
   .container{
     width:100%;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  section{
+    width: 200%;
+  }
+  .register-box{
+    height: 500px;
   }
 }

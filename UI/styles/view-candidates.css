@@ -28,12 +28,17 @@
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #23948c;
+    width: 70%;
 }
 
 .input-search input{
     margin-top: 15px;
     height: 30px;
-    width: 100%;
+    width: 60%;
+}
+
+.input-search:hover{
+    border: 2px solid #23948c;
 }
 
 .btn-div button{
@@ -47,7 +52,6 @@
     color:white;
     font-size: 1.3rem;
     font-weight: 600;
-    font-style: italic;
   }
 
 .candidate-table{
@@ -90,58 +94,6 @@ tr td:nth-child(1){
     background: #117d5a;
 }
 
-/* The dropdown container */
-.dropdown {
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 25px; 
-  border: none;
-  outline: none;
-  color: green;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, 
-.dropdown:hover .dropbtn {
- /* background-color: green;*/
-  font-weight: 600;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 /* political party section */
 
@@ -178,4 +130,25 @@ h4{
 }
 .party-details p{
   margin: .5rem 0;
+}
+
+
+@media (max-width: 348px){
+.input-search{
+	width: 100%;
+}
+
+.input-search input{
+	width: 100%;
+}   
+}
+
+@media (max-width: 769px){
+	.input-search{
+		width: 100%;
+	}
+	
+	.input-search input{
+		width: 100%;
+	}   
 }
