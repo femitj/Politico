@@ -22,7 +22,6 @@
   }
   .form__navigation div{
     height: 2.5rem;
-    /* border: 1px solid; */
     padding: 0 2rem;
     display: flex;
     align-items: center;
@@ -83,7 +82,7 @@
   }
   
   .login-box p {
-    color: white;
+    color: silver;
   }
   
   .login-box a:hover {
@@ -107,7 +106,6 @@
     letter-spacing: 1px;
     font-weight: 200;
     font-size: 1.3rem;
-    /* padding: 5px 10px; */
     color: white;
   }
   ::placeholder{
@@ -115,7 +113,7 @@
     font-weight: 100;
     font-size: 1.23rem;
     letter-spacing: 1px;
-    /* opacity: .3; */
+    opacity: .4; 
   }
 
   button{
@@ -151,9 +149,7 @@ label{
   .form__navigation{
     margin-top: 30px;
   }
-  /*.form__inputs{
-        height: calc(100% - 5.5rem);
-  }*/
+
   .login-div{
     width: 100%;
     margin-left: 0px;
@@ -182,5 +178,14 @@ label{
   }
   .container{
     width:100%;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  section{
+    width: 150%;
+  }
+  .form__navigation, input{
+    margin-bottom: 35px;
   }
 }

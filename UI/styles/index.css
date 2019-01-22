@@ -6,7 +6,6 @@ body{
 .container{
 	width:80%;
 	margin:auto;
-	/*overflow:hidden;*/
 }
 
 header{
@@ -109,11 +108,70 @@ span{
     height:300px;
 }
 
-#end{
-    height: 500px;
-    background-color: silver;
+#contactus-section{
+    height: 200px;
+    background-color: rgba(192,192,192,0.3);
 }
 
+#contactus-section .contactus-details {
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    float: left;
+    width: 40%;
+}
+
+#contactus-section span{
+    padding-top: 45px;
+}
+
+.contactus-img{
+    float: right;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 40%;
+}
+
+.contact-logo2{
+    margin-right: 40px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+footer{
+    color: #1d394a;
+    height: 2vh;
+    bottom: 0;
+    /*position: relative;*/
+}
+footer .content{
+    float: left;
+}
+
+footer .copy{
+    white-space: pre-line;
+}
+footer span{
+    color: #1d394a;
+}
+
+footer .contents{
+    float: right;
+}
+
+.contents p{
+    display: inline-block;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    
+}
+.terms{
+    border-right: 1px solid silver;
+    padding-right: 5px;
+}
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
     /* comes into effect for screens between 321 and 480 pixels (inclusive) */
@@ -128,5 +186,10 @@ span{
     }
     .welcome-img{
         background-image: none;
+    }
+    .contact-logo2{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
     }
   }

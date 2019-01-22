@@ -45,11 +45,33 @@ td,th {
     border: 2px solid silver;
     text-align: left;
     padding: 5px;
+    border-collapse: collapse;
 }
 
-tbody td {
-    text-align: center;
+tbody{
+    background: rgba(209, 209, 209, 0.5);
+    border-radius: 10px;
 }
+
+
+th{
+    position: sticky;
+    top: 0;
+    color: black;
+
+}
+
+tr th:nth-child(1){
+    width: 60px;
+    text-align: center;;
+}
+
+tr td:nth-child(1){
+    color: #fff;
+    background: white;
+}
+
+
 
 #submitButton {
     margin-top: 10px;
@@ -86,61 +108,6 @@ tbody td {
 .error {
     background-color: red;
 }
-
-
-
-  
-  /* The dropdown container */
-  .dropdown {
-    overflow: hidden;
-  }
-  
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 25px; 
-    border: none;
-    outline: none;
-    color: green;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-  }
-  
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
-   /* background-color: green;*/
-    font-weight: 600;
-  }
-  
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
 
 
     
