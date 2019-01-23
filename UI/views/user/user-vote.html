@@ -34,40 +34,120 @@
         <h2>Vote</h2>
       <form id="vote-form" class="vote-wrapper">
         <p>Enter choice of candidate and political office</p>
-
-        <div class="vote-details">
-          <label for='title'><h4>Government office</h4></label>
-          <select id='office-type' name='government office' required>
-            <option selected disabled hidden>Select Office</option>
-            <option value="office">President</option>
-            <option value="office">Local Government chairman</option>
-            <option value="office">Governor</option>
-            <option value="office">Senate</option>
-          </select>
+        <div id="vote-boxx">
+          <div class="vote-details">
+            <h4 class="v1">Federal</h4>
+          </div>
+          <div class="vote-details">
+            <select id='office-type' name='office' required>
+              <option selected disabled hidden>Select Office</option>
+              <option value="office">President</option>
+              <option value="office">Local Government chairman</option>
+              <option value="office">Governor</option>
+              <option value="office">Senate</option>
+            </select>
+          </div>
+          <div class="vote-details">
+            <select id='party-type' name='party' required>
+              <option selected disabled hidden>Select Party</option>
+              <option value="party">UCP</option>
+              <option value="party">APC</option>
+              <option value="party">ADD</option>
+              <option value="party">PDP</option>
+            </select>  
+          </div>
+          <div class="vote-details">
+            <input type="text" name="name" id="candidates-name" placeholder="enter choice" required>
+          </div>
+        </div>
+        
+        <div id="vote-boxx">
+          <div class="vote-details">
+            <h4 class="v2">Legislative</h4>
+          </div>
+          <div class="vote-details">
+            <select id='office-type' name='office' required>
+              <option selected disabled hidden>Select Office</option>
+              <option value="office">President</option>
+              <option value="office">Local Government chairman</option>
+              <option value="office">Governor</option>
+              <option value="office">Senate</option>
+            </select>
+          </div>
+          <div class="vote-details">
+            <select id='party-type' name='party' required>
+              <option selected disabled hidden>Select Party</option>
+              <option value="party">UCP</option>
+              <option value="party">APC</option>
+              <option value="party">ADD</option>
+              <option value="party">PDP</option>
+            </select>  
+          </div>
+          <div class="vote-details">
+            <input type="text" name="name" id="candidates-name" placeholder="enter choice" required>
+          </div>
         </div>
 
-        <div class="vote-details">
-          <label for='title'><h4>Political party</h4></label>
-          <select id='office-type' name='government office' required>
-            <option selected disabled hidden>Select Party</option>
-            <option value="party">UCP</option>
-            <option value="party">APC</option>
-            <option value="party">ADD</option>
-            <option value="party">PDP</option>
-          </select>  
+        <div id="vote-boxx">
+          <div class="vote-details">
+            <h4 class="v3">State</h4>
+          </div>
+          <div class="vote-details">
+            <select id='office-type' name='office' required>
+              <option selected disabled hidden>Select Office</option>
+              <option value="office">President</option>
+              <option value="office">Local Government chairman</option>
+              <option value="office">Governor</option>
+              <option value="office">Senate</option>
+            </select>
+          </div>
+          <div class="vote-details">
+            <select id='party-type' name='party' required>
+              <option selected disabled hidden>Select Party</option>
+              <option value="party">UCP</option>
+              <option value="party">APC</option>
+              <option value="party">ADD</option>
+              <option value="party">PDP</option>
+            </select>  
+          </div>
+          <div class="vote-details">
+            <input type="text" name="name" id="candidates-name" placeholder="enter choice" required>
+          </div>
         </div>
 
-        <div class="vote-details">
-          <label for='title'><h4>Name of candidate</h4></label>
-          <input type="text" name="name" id="candidates-name" placeholder="enter choice" equired>
-        </div>  
+        <div id="vote-boxx">
+          <div class="vote-details">
+            <h4 class="v4">Local Government</h4>
+          </div>
+          <div class="vote-details">
+            <select id='office-type' name='office' required>
+              <option selected disabled hidden>Select Office</option>
+              <option value="office">President</option>
+              <option value="office">Local Government chairman</option>
+              <option value="office">Governor</option>
+              <option value="office">Senate</option>
+            </select>
+          </div>
+          <div class="vote-details">
+            <select id='party-type' name='party' required>
+              <option selected disabled hidden>Select Party</option>
+              <option value="party">UCP</option>
+              <option value="party">APC</option>
+              <option value="party">ADD</option>
+              <option value="party">PDP</option>
+            </select>  
+          </div>
+          <div class="vote-details">
+            <input type="text" name="name" id="candidates-name" placeholder="enter choice" required>
+          </div>
+        </div>
 
         <div id='submit-button'>
             <input type="submit" value='Vote'>
         </div>
 
       </form>
-      
+
       </div>
     </section>
 
