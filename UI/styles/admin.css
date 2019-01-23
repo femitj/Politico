@@ -1,31 +1,4 @@
-#gov-office{
-    margin-top: 25px;
-}
-
-#head{
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin: 0;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    color: black;
-}
-
-#head2{
-    color: black;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: .5rem 0;
-}
-
-#party-form {
-    max-height: 300px;
-    margin: 2rem auto;
-    width: 600px;
-}
-
-input {
+input, select {
     display: block;
     width: 100%;
     border: 3px solid silver;
@@ -33,12 +6,13 @@ input {
     font-size: 18px;
     border-radius: 10px;
     margin: 3px;
-}
+  }
 
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    overflow-y: scroll;
 }
 
 td,th {
@@ -58,6 +32,7 @@ th{
     position: sticky;
     top: 0;
     color: black;
+    background: white;
 
 }
 
@@ -67,10 +42,20 @@ tr th:nth-child(1){
 }
 
 tr td:nth-child(1){
-    color: #fff;
     background: white;
 }
 
+.edit, .delete{
+    text-align: center;
+}
+
+.delete a{
+    text-decoration: none;
+}
+
+.delete a:hover{
+    color: red;
+}
 
 
 #submitButton {
@@ -157,4 +142,9 @@ only screen and (max-width: 760px),
 	td:nth-of-type(4):before { content: "HQ Address"; }
     td:nth-of-type(5):before { content: ""; }
     td:nth-of-type(5):before { content: ""; }
+
+    .edit, .delete{
+        text-align: left;
+    }
+
 }

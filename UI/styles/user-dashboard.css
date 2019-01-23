@@ -65,7 +65,7 @@ h4{
   margin: .5rem 0;
 }
 
-#show-party{
+#show-party-s{
   height: 100%;;
 }
 #party-btn{
@@ -78,7 +78,7 @@ h4{
   margin:0;
 }
 
-#show-party, 
+#show-party-s, 
 #show-candidates, 
 #show-votes,
 #join-election{
@@ -86,7 +86,7 @@ h4{
   margin: 25px;
 }
 
-#show-party p:nth-child(1), 
+#show-party-s p:nth-child(1), 
 #show-candidates p, 
 #show-votes p{
   color: green;
@@ -105,7 +105,7 @@ h4{
   text-decoration: none;
 }
 
-#show-party button, 
+#show-party-s button, 
 #show-candidates button, 
 #show-votes button,
 #join-election button{
@@ -171,7 +171,7 @@ h4{
     margin-right: 35px;
   }
 }
-@media screen and (min-width: 321px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   /* comes into effect for screens between 321 and 480 pixels (inclusive) */
   .container {
     width: 320px ;

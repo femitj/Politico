@@ -15,6 +15,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   
   .party-wrapper, 
   .vote-wrapper{
@@ -42,12 +43,16 @@
     margin: .5rem 0;
   }
 
-.vote-details input{
+.vote-details input, select{
   width: 60%;
   height: 2.5rem;
 }
 
 .vote-details input:hover{
+  border: 1px solid rgba(0, 128, 0, 0.5);
+}
+
+.vote-details select:hover{
   border: 1px solid rgba(0, 128, 0, 0.5);
 }
 
@@ -64,7 +69,7 @@
   font-weight: 600;
 }
 
-@media screen and (min-width: 321px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .reset-section,
   .vote-section{
     width: 200%;

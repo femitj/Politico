@@ -53,7 +53,7 @@ nav{
 }
 
 #welcome{
-    height: 500px;
+    height: 470px;
 }
 
 #welcome-box{
@@ -106,6 +106,17 @@ span{
     background-image:url(../images/img1.jpg);
     width:60%;
     height:300px;
+}
+
+#section-img{
+    background-image: url(../images/img10-2.jpg);
+    background-position: 300px;
+    background-repeat: no-repeat;
+    height: 300px;
+    border: none;
+    padding-top: 60px;
+    padding-bottom: opx;
+    margin: 0px;
 }
 
 #contactus-section{
