@@ -11,12 +11,22 @@ class PartyController {
       logoUrl: req.body.logoUrl,  // String
     };
     db.push(party);
-    // party created
+    // political party created
     return res.status(201).json({
       status: 201,
       data: [{
         id: party.id,
         message: 'Created political party',
+      }],
+    });
+  }
+
+  // get all political parties
+  static getAllParties(req, res) {
+    return res.status(200).json({
+      status: 200,
+      data: [{
+        party: db,
       }],
     });
   }
