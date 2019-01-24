@@ -1,7 +1,8 @@
 import express from 'express';
-const bodyParser = require('body-parser');
 import dotenv from 'dotenv';
-import 'babel-polyfill';
+import routes from './routes/Routes';
+
+const bodyParser = require('body-parser');
 
 dotenv.config();
 const app = express();
@@ -15,8 +16,10 @@ app.use(express.json());
 app.use('/', express.static('UI'));
 
 app.get('/api/v1', (req, res) => {
-	return res.status(200).send({'message': 'YAY! Congratulations! Your first endpoint is working'});
+	return res.status(200).send({message: 'YAY! Congratulations! Your first endpoint is working'});
 })
+
+app.use(routes);
 
 const server = app.listen(PORT, () => {
 	console.log(`server running on port ${PORT}`);
