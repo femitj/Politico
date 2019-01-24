@@ -5,8 +5,9 @@ import PartyController from '../controllers/PartyControllers';
 const router = express.Router();
 
 // Political party routes
-router.post('/api/v1/political-party', PartyController.createParty);
-router.get('/api/v1/political-parties', PartyController.getAllParties);
-router.get('/api/v1/political-party/:id', PartyController.getParty);
+router.post('/api/v1/parties', PartyController.createParty);
+router.get('/api/v1/parties', PartyController.getAllParties);
+router.get('/api/v1/parties/:id', PartyController.getParty);
+router.patch('/api/v1/parties/:id', PartyController.updatePartyName);
 
 module.exports = router;

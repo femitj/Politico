@@ -16,7 +16,7 @@ class PartyController {
       status: 201,
       data: [{
         id: party.id,
-        message: 'Created political party',
+        name: party.name,
       }],
     });
   }
@@ -25,14 +25,12 @@ class PartyController {
   static getAllParties(req, res) {
     return res.status(200).json({
       status: 200,
-      data: [{
-        party: db,
-      }],
+      data: db,
     });
   }
 
-   // get a single political party
-   static getParty(req, res) {
+  // get a single political party
+  static getParty(req, res) {
     const party = db.find(c => c.id === parseInt((req.params.id), 10));
     // party not found
     if (!party) {
@@ -45,7 +43,30 @@ class PartyController {
     return res.status(200).json({
       status: 200,
       data: [{
-        record: party,
+        id: party.id,
+        name: party.name,
+        logo: party.logoUrl,
+      }],
+    });
+  }
+
+  // update Political party name
+  static updatePartyName(req, res) {
+    const requestId = req.params.id;
+    const reqBody = req.body;
+    const party = db.find(c => c.id === parseInt((requestId), 10));
+    if (!party) {
+      return res.status(404).json({
+        status: 404,
+        error: 'party not found',
+      });
+    }
+    party.name = reqBody.name;
+    return res.status(200).json({
+      status: 200,
+      data: [{
+        id: requestId,
+        name: party.name,
       }],
     });
   }
