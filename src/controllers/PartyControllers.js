@@ -30,6 +30,25 @@ class PartyController {
       }],
     });
   }
+
+   // get a single political party
+   static getParty(req, res) {
+    const party = db.find(c => c.id === parseInt((req.params.id), 10));
+    // party not found
+    if (!party) {
+      return res.status(404).json({
+        status: 404,
+        error: 'Political party not found',
+      });
+    }
+    // political party found
+    return res.status(200).json({
+      status: 200,
+      data: [{
+        record: party,
+      }],
+    });
+  }
 }
 
 export default PartyController;
