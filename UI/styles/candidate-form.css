@@ -1,0 +1,53 @@
+.candidate-section{
+  margin-top: 35px;
+  margin-bottom: 80px;
+}
+
+.candidate-wrapper{
+  padding: .5rem 1rem;
+  border: 1px solid rgba(0, 128, 0, 0.5);
+  border-radius: .25rem;
+  margin-top: 10px;
+  width: 45%;
+}
+
+h4{
+  color: #1d394a;
+  margin: 0.5rem 0;
+}
+.candidate-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(29, 57, 74, 0.1);
+  height: 3.5rem;
+  margin: .5rem 0;
+}
+
+.candidate-details input{
+  width: 60%;
+  height: 2.5rem;
+}
+
+.candidate-details input:hover{
+  border: 1px solid rgba(0, 128, 0, 0.5);
+}
+
+#submit-button input{
+  height: 3rem;
+  width: 10rem;
+  border: 1px solid #117d5a;
+  background: #117d5a;
+  border-radius: .25rem;
+  margin: -0.3rem 0;
+  text-decoration: none;
+  color:white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .candidate-section{
+    width: 200%;
+  }
+}

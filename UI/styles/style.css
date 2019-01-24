@@ -8,6 +8,11 @@ width:80%;
 margin:auto;
 }
 
+.hold{
+  height: 500px;
+  position: relative;
+}
+
 header{
   height: 3rem;
 }
@@ -133,4 +138,93 @@ footer .contents{
 .terms{
     border-right: 1px solid silver;
     padding-right: 5px;
+}
+
+
+/* ADMIN create gov office and party */
+
+#gov-office{
+  margin-top: 25px;
+  border: 1px solid silver;
+  background-color: rgba(196, 196, 196, 0.1);
+}
+
+#edit-office{
+  margin-top: 35px;
+}
+
+#head{
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: black;
+}
+
+#head2{
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: .5rem 0;
+}
+
+#show-party{
+  margin-top: 25px;
+  padding: 15px;
+  border: 1px solid silver;
+  background-color: rgba(196, 196, 196, 0.1);
+}
+
+#show-party h2{
+  border-bottom: 1px solid silver;
+  width: 80%;
+}
+
+#party-form {
+  max-height: 300px;
+  width: 600px;
+  border: 1px solid rgba(196, 196, 196, 0.1);
+  padding: 25px;
+  box-shadow: 0 5px 35px rgba(0,0,0,0.2);
+  margin-bottom: 60px;
+}
+
+#office-form {
+  max-height: 300px;
+  width: 600px;
+  border: 1px solid rgba(196, 196, 196, 0.1);
+  padding: 25px;
+  background: white;
+  box-shadow: 0 5px 35px rgba(0,0,0,0.2);
+}
+
+#edit-office-form {
+  max-height: 300px;
+  width: 600px;
+  border: 1px solid rgba(196, 196, 196, 0.1);
+  padding: 25px;
+  background: white;
+  box-shadow: 0 5px 35px rgba(0,0,0,0.2);
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  #gov-section{
+      width: 150%;   
+    }
+
+  #office-form{
+      width: 100%;
+      padding: 18px;
+      border: none;
+    }
+
+  #party-form{
+    width: 100%;
+    padding: 18px;
+    border: none;
+  }  
 }
