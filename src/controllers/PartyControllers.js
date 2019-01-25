@@ -14,6 +14,7 @@ class PartyController {
     // political party created
     return res.status(201).json({
       status: 201,
+      message: 'Political party created',
       data: [{
         id: party.id,
         name: party.name,
@@ -25,6 +26,7 @@ class PartyController {
   static getAllParties(req, res) {
     return res.status(200).json({
       status: 200,
+      message: 'All political party record successfully retrieved',
       data: db,
     });
   }
@@ -42,6 +44,7 @@ class PartyController {
     // political party found
     return res.status(200).json({
       status: 200,
+      message: '/id exists, Political party found',
       data: [{
         id: party.id,
         name: party.name,
@@ -64,6 +67,7 @@ class PartyController {
     party.name = reqBody.name;
     return res.status(200).json({
       status: 200,
+      message: "Political party's name updated",
       data: [{
         id: requestId,
         name: party.name,
