@@ -4,6 +4,7 @@
   "description": "Politico is a simple RESTFUL application that enables citizens give their mandate to politicians running for different government offices while building trust in the process through transparency.",
   "main": "index.js",
   "scripts": {
+    "test": "mocha --compilers js:babel-register src/tests/apps.js || true",
     "start": "nodemon src/server.js --exec babel-node",
     "dev-start": "babel-watch ./src/server.js",
     "build": "babel src -d dist",
@@ -24,6 +25,8 @@
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "gh-pages": "^2.0.1"
