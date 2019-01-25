@@ -74,6 +74,24 @@ class PartyController {
       }],
     });
   }
+
+  // delete a record
+  static deleteParty(req, res) {
+    const requestId = req.params.id;
+    const party = db.find(c => c.id === parseInt((requestId), 10));
+    const index = db.indexOf(party);
+    if (!party) {
+      return res.status(404).json({
+        status: 404,
+        error: 'not deleted, party not found',
+      });
+    }
+    db.splice(index, 1);
+    return res.status(200).json({
+      status: 200,
+      message: "Political party deleted",
+    });
+  }
 }
 
 export default PartyController;

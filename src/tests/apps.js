@@ -101,9 +101,8 @@ describe('Politico Test Space', () => {
           res.status.should.equal(200);
           res.body.should.be.a('object');
           res.body.should.have.property('status');
-          res.body.should.have.property('data');
           res.body.status.should.be.a('number');
-          res.body.data.should.be.a('array');
+          res.body.should.have.property('message');
           res.body.status.should.equal(200);
           done();
         });
@@ -113,55 +112,55 @@ describe('Politico Test Space', () => {
   describe('POST /political-office', () => {
     it('should create a office', (done) => {
       chai.request(app)
-      .post('/api/v1/offices')
-      .send(newOffice)
-      .end((err, res) => {
-        if (err) throw err;
-        res.status.should.equal(201);
-        res.body.should.be.a('object');
-        res.body.should.have.property('status');
-        res.body.should.have.property('data');
-        res.body.status.should.be.a('number');
-        res.body.data.should.be.a('array');
-        res.body.status.should.equal(201);
-        done();
-      });
+        .post('/api/v1/offices')
+        .send(newOffice)
+        .end((err, res) => {
+          if (err) throw err;
+          res.status.should.equal(201);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('number');
+          res.body.data.should.be.a('array');
+          res.body.status.should.equal(201);
+          done();
+        });
     });
   });
 
   describe('GET /political-office', () => {
     it('should list all offices', (done) => {
       chai.request(app)
-      .get('/api/v1/offices')
-      .end((err, res) => {
-        if (err) throw err;
-        res.status.should.equal(200);
-        res.body.should.be.a('object');
-        res.body.should.have.property('status');
-        res.body.should.have.property('data');
-        res.body.status.should.be.a('number');
-        res.body.data.should.be.a('array');
-        res.body.status.should.equal(200);
-        done();
-      });
+        .get('/api/v1/offices')
+        .end((err, res) => {
+          if (err) throw err;
+          res.status.should.equal(200);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('number');
+          res.body.data.should.be.a('array');
+          res.body.status.should.equal(200);
+          done();
+        });
     });
   });
 
   describe('GET /political-office/:id', () => {
     it('should return a specific office', (done) => {
       chai.request(app)
-      .get('/api/v1/office/1')
-      .end((err, res) => {
-        if (err) throw err;
-        res.status.should.equal(200);
-        res.body.should.be.a('object');
-        res.body.should.have.property('status');
-        res.body.should.have.property('data');
-        res.body.status.should.be.a('number');
-        res.body.data.should.be.a('array');
-        res.body.status.should.equal(200);
-        done();
-      });
+        .get('/api/v1/office/1')
+        .end((err, res) => {
+          if (err) throw err;
+          res.status.should.equal(200);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('number');
+          res.body.data.should.be.a('array');
+          res.body.status.should.equal(200);
+          done();
+        });
     });
   });
 

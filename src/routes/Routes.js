@@ -9,5 +9,6 @@ router.post('/api/v1/parties', PartyController.createParty);
 router.get('/api/v1/parties', PartyController.getAllParties);
 router.get('/api/v1/parties/:id', PartyController.getParty);
 router.patch('/api/v1/parties/:id', PartyController.updatePartyName);
+router.delete('/api/v1/parties/:id', PartyController.deleteParty);
 
 module.exports = router;
