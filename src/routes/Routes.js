@@ -1,5 +1,6 @@
 import express from 'express';
 import PartyController from '../controllers/PartyControllers';
+import OfficeController from '../controllers/OfficeControllers';
 
 // route handler
 const router = express.Router();
@@ -10,5 +11,10 @@ router.get('/api/v1/parties', PartyController.getAllParties);
 router.get('/api/v1/parties/:id', PartyController.getParty);
 router.patch('/api/v1/parties/:id', PartyController.updatePartyName);
 router.delete('/api/v1/parties/:id', PartyController.deleteParty);
+
+
+
+
+router.get('/api/v1/offices/:id', OfficeController.getOffice);
 
 module.exports = router;
