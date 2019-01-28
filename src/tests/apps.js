@@ -156,7 +156,7 @@ describe('Politico Test Space', () => {
   describe('GET /political-office/:id', () => {
     it('should return a specific office', (done) => {
       chai.request(app)
-        .get('/api/v1/office/1')
+        .get('/api/v1/offices/1')
         .end((err, res) => {
           if (err) throw err;
           res.status.should.equal(200);
