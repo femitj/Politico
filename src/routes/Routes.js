@@ -15,5 +15,6 @@ router.delete('/api/v1/parties/:id', PartyController.deleteParty);
 
 
 router.get('/api/v1/offices', OfficeController.getAllOffices);
+router.get('/api/v1/offices/:id', OfficeController.getOffice);
 
 module.exports = router;
