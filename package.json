@@ -23,6 +23,10 @@
     "url": "https://github.com/femitj/Politico/issues"
   },
   "homepage": "https://github.com/femitj/Politico#readme",
+  "engines": {
+    "node": "10.6.0",
+    "npm": "6.1.0"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
