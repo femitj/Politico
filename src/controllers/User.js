@@ -19,7 +19,15 @@ const User = {
         status: 201,
         data: [{
           token,
-          user: rows,
+          user: {
+            id: rows[0].id,
+            email: rows[0].email,
+            password: rows[0].password,
+            firstname: rows[0].firstname,
+            lastname: rows[0].lastname,
+            othername: rows[0].othername,
+            passportUrl: rows[0].passporturl,
+          },
         }],
       });
     } catch (error) {

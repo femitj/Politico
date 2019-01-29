@@ -19,7 +19,7 @@ const signInInput = (req, res, next) => {
       error: 'password cannot be empty',
     });
   }
-  if (password < 6) {
+  if (password.length < 6) {
     return res.status(400).json({
       status: 400,
       error: 'password cannot be less than 6 characters',
