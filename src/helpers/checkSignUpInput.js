@@ -38,7 +38,7 @@ const checkSignUpInput = (req, res, next) => {
       error: 'username cannot be empty',
     });
   }
-  if (password === '' || password === null || password === undefined || password < 6) {
+  if (password === '' || password === null || password === undefined || password.length < 6) {
     return res.status(400).json({
       status: 400,
       error: 'password cannot be less than 6',
