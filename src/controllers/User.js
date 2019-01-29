@@ -1,8 +1,7 @@
 import db from '../models/index';
 import Helper from '../helpers/Helper';
 
-const User = {
-  
+const User = { 
   // Create User
   async create(req, res) {
     const hashPassword = Helper.hashPassword(req.body.password);
@@ -48,7 +47,7 @@ const User = {
   },
   
 
-    async login(req, res) {
+  async login(req, res) {
     const text = 'SELECT * FROM users WHERE email = $1';
     try {
       const { rows } = await db.query(text, [req.body.email]);
@@ -59,7 +58,7 @@ const User = {
         return res.status(400).send({ message: 'The password you provided is incorrect' });
       }
 
-       const token = Helper.generateToken(rows[0].id);
+      const token = Helper.generateToken(rows[0].id);
       return res.status(200).send({             
         status: 201,
         data: [{
@@ -80,6 +79,6 @@ const User = {
     }
   },
 
-}
+};
 
 export default User;
