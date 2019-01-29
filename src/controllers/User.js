@@ -27,12 +27,12 @@ const User = {
         status: 201,
         data: [{
           token,
-          user: rows,
+          user: req.body,
         }]
       });
     } catch (error) {
       if (error.routine === '_bt_check_unique') {
-        return res.status(400).send({ 'message': 'User with that EMAIL already exist' })
+        return res.status(400).send({ message: 'User with that EMAIL already exist' })
       }
       return res.status(400).send(error);
     }
