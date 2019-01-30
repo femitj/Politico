@@ -118,10 +118,11 @@ const createCandidate = () => {
   const queryTextCandidate =
     `CREATE TABLE IF NOT EXISTS
       candidates(
-        office INTEGER UNIQUE REFERENCES offices(office_id),
-        candidate INTEGER UNIQUE REFERENCES users(id),
+        politician_id SERIAL UNIQUE,
+        office INTEGER REFERENCES offices(office_id),
+        candidate INTEGER REFERENCES users(id),
         createdOn VARCHAR(128) NOT NULL,
-        CONSTRAINT politician_id PRIMARY KEY (office, candidate) 
+        PRIMARY KEY (office, candidate) 
       )`;
 
   pool.query(queryTextCandidate)
@@ -140,12 +141,12 @@ const createVote = () => {
   const queryTextVote =
     `CREATE TABLE IF NOT EXISTS
       votes(
-        id INTEGER UNIQUE NOT NULL,
-        office INTEGER UNIQUE REFERENCES offices(office_id),
-        candidate INTEGER UNIQUE REFERENCES candidates(politician_id),
-        voter INTEGER UNIQUE REFERENCES users(id), 
+        vote_id SERIAL UNIQUE,
+        office INTEGER REFERENCES offices(office_id),
+        candidate INTEGER REFERENCES candidates(politician_id),
+        voter INTEGER REFERENCES users(id), 
         createdOn VARCHAR(128) NOT NULL,
-        CONSTRAINT pk PRIMARY KEY (office, voter) 
+        PRIMARY KEY (office, voter) 
       )`;
 
   pool.query(queryTextVote)
