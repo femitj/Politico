@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const dontenv = require('dotenv');
+const bcrypt = require('bcrypt');
 
 dontenv.config();
 
@@ -35,7 +36,33 @@ const createUserTable = () => {
       console.log(err);
       pool.end();
     });
-}
+};
+
+const createAdmin = () => {
+  const salt = bcrypt.genSaltSync(10);
+  const hashedpassword = bcrypt.hashSync('admin_pass', salt);
+
+  const text = `INSERT INTO
+    users(email, lastname, firstname, password, phoneNumber, passportUrl, "isAdmin") VALUES($1, $2, $3, $4, $5, $6, $7)`;
+  const values = [
+    'admin@email.com',
+    'Admin',
+    'User',
+    hashedpassword,
+    '08057661075',
+    'google.com',
+    true,
+  ];
+  pool.query(text, values)
+    .then((res) => {
+      console.log(res);
+      pool.end();
+    })
+    .catch((err) => {
+      console.log(err);
+      pool.end();
+    });
+};
 
 // Political party table
 const createParty = () => {
@@ -60,7 +87,7 @@ const createParty = () => {
       console.log(err);
       pool.end();
     });
-}
+};
 
 // Political office table
 const createOffice = () => {
@@ -84,18 +111,17 @@ const createOffice = () => {
       console.log(err);
       pool.end();
     });
-    }
+};
 
 //  candidates table
 const createCandidate = () => {
   const queryTextCandidate =
     `CREATE TABLE IF NOT EXISTS
       candidates(
-        politician_id INTEGER UNIQUE NOT NULL,
         office INTEGER UNIQUE REFERENCES offices(office_id),
         candidate INTEGER UNIQUE REFERENCES users(id),
         createdOn VARCHAR(128) NOT NULL,
-        PRIMARY KEY (office, candidate) 
+        CONSTRAINT politician_id PRIMARY KEY (office, candidate) 
       )`;
 
   pool.query(queryTextCandidate)
@@ -107,7 +133,7 @@ const createCandidate = () => {
       console.log(err);
       pool.end();
     });
-}
+};
       
 //  votes table
 const createVote = () => {
@@ -153,7 +179,7 @@ const createResult = () => {
       console.log(err);
       pool.end();
     });
-}
+};
 
 const createAllTables = () => {
   createParty();
@@ -169,7 +195,8 @@ module.exports = {
   createOffice,
   createCandidate,
   createVote,
-  createResult, 
+  createResult,
+  createAdmin, 
 };
 
 require('make-runnable');
