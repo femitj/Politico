@@ -28,12 +28,10 @@ const createUserTable = () => {
       )`;
 
   pool.query(queryTextUsers)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -54,12 +52,10 @@ const createAdmin = () => {
     true,
   ];
   pool.query(text, values)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -79,12 +75,10 @@ const createParty = () => {
       )`;
 
   pool.query(queryTextParty)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -103,12 +97,10 @@ const createOffice = () => {
       )`;
 
   pool.query(queryTextOffice)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -126,12 +118,10 @@ const createCandidate = () => {
       )`;
 
   pool.query(queryTextCandidate)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -150,12 +140,10 @@ const createVote = () => {
       )`;
 
   pool.query(queryTextVote)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
@@ -172,12 +160,10 @@ const createResult = () => {
     )`;
   
   pool.query(queryTextResult)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       pool.end();
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       pool.end();
     });
 };
