@@ -27,6 +27,6 @@ router.post('/api/v1/users', checkSignUpInput, userController.create);
 router.post('/api/v1/login', checkSignInInput, userController.login);
 
 // Candidate routes
-router.post('/api/v1/candidate', Auth.verifyToken, CandidateController.create);
+router.post('/office/<user-id>/register', Auth.verifyToken, CandidateController.create);
 
 module.exports = router;

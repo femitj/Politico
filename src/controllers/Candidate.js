@@ -18,14 +18,14 @@ class Candidate {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).send({
         status: 201,
+        message: 'Candidate created',
         data: [{
-          id: rows[0].id,
-          message: 'Candidate created',
+          user: rows[0].politician_id,
+          office: rows[0].office,
         }],
       });
     } 
     catch (error) {
-      console.log(error);
       return res.status(400).send(error);
     }
   }
