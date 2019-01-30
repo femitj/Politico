@@ -19,9 +19,11 @@ class OfficeController {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).send({
         status: 201,
+        message: 'Political office created',
         data: [{
           id: rows[0].id,
-          message: 'Political office created',
+          type: rows[0].type,
+          name: rows[0].name,
         }],
       });
     } 
@@ -71,7 +73,6 @@ class OfficeController {
       });
     } 
     catch (error) {
-      console.log(error);
       return res.status(400).send(error)
     }
   }
