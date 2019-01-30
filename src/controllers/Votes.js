@@ -19,9 +19,12 @@ class vote {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).send({
         status: 201,
+        message: 'vote created',
         data: [{
           id: rows[0].id,
-          message: 'vote created',
+          office: rows[0].office,
+          candidate: rows[0].candidate,
+          voter: rows[0].voter,
         }],
       });
     } 
