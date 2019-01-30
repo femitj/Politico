@@ -20,9 +20,10 @@ class PartyController {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).send({
         status: 201,
+        message: 'Political party created',
         data: [{
           id: rows[0].id,
-          message: 'Political party created',
+          name: rows[0].name,
         }],
       });
     } 
