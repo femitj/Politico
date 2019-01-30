@@ -20,7 +20,7 @@ class Candidate {
         status: 201,
         message: 'Candidate created',
         data: [{
-          user: rows[0].politician_id,
+          user: rows[0].candidate,
           office: rows[0].office,
         }],
       });
