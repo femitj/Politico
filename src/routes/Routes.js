@@ -4,6 +4,7 @@ import PartyController from '../controllers/PartyControllers';
 import OfficeController from '../controllers/OfficeControllers';
 import CandidateController from '../controllers/Candidate';
 import VoteController from '../controllers/Votes';
+import ResultController from '../controllers/results';
 import Auth from '../middleware/Auth';
 import checkSignUpInput from '../helpers/checkSignUpInput';
 import checkSignInInput from '../helpers/signInInput';
@@ -28,9 +29,12 @@ router.post('/api/v1/users', checkSignUpInput, userController.create);
 router.post('/api/v1/login', checkSignInInput, userController.login);
 
 // Candidate routes
-router.post('/api/v1/candidate', Auth.verifyToken, CandidateController.create);
+router.post('/office/:id/register', Auth.verifyToken, CandidateController.create);
 
 // Vote routes
 router.post('/api/v1/votes', Auth.verifyToken, VoteController.create);
+
+// result route
+router.post('/office/:id/result', ResultController.getResult);
 
 module.exports = router;
