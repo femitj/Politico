@@ -22,8 +22,7 @@ class result {
         message: 'Election results',
         data: rows,
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }

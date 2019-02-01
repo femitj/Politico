@@ -24,8 +24,7 @@ class Candidate {
           office: rows[0].office,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }

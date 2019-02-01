@@ -1,0 +1,759 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Politico is a simple RESTFUL application that enables citizens give their mandate to politicians running for different government offices while building trust in the process through transparency.",
+    "version": "1.0.0",
+    "title": "Politico documentation",
+    "contact": {
+      "email": "tjhakeemus@gmail.com"
+    }
+  },
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Create and login users",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Political parties",
+      "description": "Create, read, update and delete political party",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Office",
+      "description": "Create, read political office",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Candidates",
+      "description": "Register as a candidate",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Vote",
+      "description": "Vote for your candidate of choice",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Results",
+      "description": "User can fetch result of election",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/parties": {
+      "post": {
+        "tags": [
+          "Political parties"
+        ],
+        "summary": "Create a new party record",
+        "description": "Admin can create party records",
+        "operationId": "addPartyRecord",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "political party admin creates",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parties"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Political party created successfully",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Unauthorised",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Political parties"
+        ],
+        "summary": "GET all political party records",
+        "description": "Return all party records from the database",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetch all party record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "204": {
+            "description": "Party not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/party/<id>": {
+      "get": {
+        "tags": [
+          "Political parties"
+        ],
+        "summary": "Find party record by ID from database",
+        "description": "Returns a specific record",
+        "operationId": "getrecordById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID does not exists",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful gets party record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Party record not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/parties/{id}/name": {
+      "patch": {
+        "tags": [
+          "Political parties"
+        ],
+        "summary": "updates a specific party's name",
+        "description": "updates a specific party's name",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of party",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updates",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Party not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/parties/{id}/": {
+      "delete": {
+        "tags": [
+          "Political parties"
+        ],
+        "summary": "Deletes a specific party",
+        "description": "Deletes a specific party",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of party",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deletes",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Party not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Create new user account",
+        "description": "Registers a new user",
+        "operationId": "signup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create a new user record",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Signup"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Account created successfully",
+            "schema": {
+              "$ref": "#/definitions/SignupSuccess"
+            }
+          },
+          "404": {
+            "description": "Unauthorized!, you have to login",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logs a user into the app",
+        "description": "Authenticate a user",
+        "operationId": "login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User login credentials",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "You have been logged in successfully!",
+            "schema": {
+              "$ref": "#/definitions/LoginSuccess"
+            }
+          },
+          "404": {
+            "description": "User not Found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+      "/candidate": {
+        "post": {
+          "tags": [
+            "Candidates"
+          ],
+          "summary": "Registers as a candidate",
+          "description": "User can register as a candidate",
+          "operationId": "addcandidateRecord",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "user can register as a candidate",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/candidate"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "user can register as a candidate created successfully",
+              "schema": {
+                "$ref": "#/definitions/SuccessRequest"
+              }
+            },
+            "404": {
+              "description": "Unauthorised",
+              "schema": {
+                "$ref": "#/definitions/BadRequest"
+              }
+            }
+          }
+        }
+    },
+    "/vote": {
+      "post": {
+        "tags": [
+          "Vote"
+        ],
+        "summary": "users can vote",
+        "description": "User can vote",
+        "operationId": "addVoteRecord",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user's can vote",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user can vote successfully",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Unauthorised",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+      "/results": {
+        "post": {
+          "tags": [
+            "Results"
+          ],
+          "summary": "users get results to election",
+          "description": "User can fetch results to election",
+          "operationId": "addresults",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "user's can get results to election",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/voteResults"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "user can get results to electioin successfully",
+              "schema": {
+                "$ref": "#/definitions/VoteSuccess"
+              }
+            },
+            "404": {
+              "description": "Unauthorised",
+              "schema": {
+                "$ref": "#/definitions/BadRequest"
+              }
+            }
+          }
+        }
+      },
+    "/offices": {
+      "post": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "Create a new office record",
+        "description": "Admin can create office records",
+        "operationId": "addOfficeRecord",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "political office admin creates",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/offices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Political office created successfully",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Unauthorised",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "GET all political office records",
+        "description": "Return all office records from the database",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetch all office record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "204": {
+            "description": "office not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/office/<id>": {
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "Find office record by ID from database",
+        "description": "Returns a specific record",
+        "operationId": "getrecordById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID does not exists",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful gets office record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "office record not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "parties": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "hqAddress": {
+          "type": "string"
+        },
+        "logoUrl": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "offices": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "officeSuccess": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/officeSuccess"
+          }
+        }
+      }
+    },
+    "officeGetSuccess": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/officeGetSuccess"
+          }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "office": {
+          "type": "string"
+        }
+      }
+    },
+    "VoteSuccess": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VoteSuccess"
+          }
+        }
+      }
+    },
+    "vote": {
+      "type": "object",
+      "properties": {
+        "candidate": {
+          "type": "integer"
+        },
+        "office": {
+          "type": "integer"
+        }
+      }
+    },
+    "Signup": {
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "phonenumber": {
+          "type": "string"
+        },
+        "othernames": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "SignupSuccess": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SignupSuccess"
+          }
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "Login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "LoginSuccess": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginSuccess"
+          }
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "BadRequest": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "errors": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "items": {
+            "$ref": "#/definitions/BadRequest"
+          }
+        }
+      }
+    },
+    "SuccessRequest": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SuccessRequest"
+          }
+        }
+      }
+    }
+  }
+}

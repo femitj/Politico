@@ -1,7 +1,9 @@
 import { Client } from 'pg';
 import dotenv from 'dotenv';
-import { queryTextUsers, queryTextOffice, 
-  queryTextParty, queryTextVote, queryTextCandidate } from './table';
+import {
+  queryTextUsers, queryTextOffice,
+  queryTextParty, queryTextVote, queryTextCandidate,
+} from './table';
 
 dotenv.config();
 

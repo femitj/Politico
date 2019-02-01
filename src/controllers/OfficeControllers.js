@@ -14,7 +14,7 @@ class OfficeController {
       req.user.id,
       req.body.createdOn,
     ];
- 
+
     try {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).json({
@@ -26,8 +26,7 @@ class OfficeController {
           name: rows[0].name,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }
@@ -70,8 +69,7 @@ class OfficeController {
           name: rows[0].name,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }

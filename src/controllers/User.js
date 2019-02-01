@@ -1,7 +1,7 @@
 import db from '../models/index';
 import Helper from '../helpers/Helper';
 
-const User = { 
+const User = {
   // Create User
   async create(req, res) {
     const hashPassword = Helper.hashPassword(req.body.password);
@@ -23,7 +23,7 @@ const User = {
     try {
       const { rows } = await db.query(createQuery, values);
       const token = Helper.generateToken(rows[0].id);
-      return res.status(201).json({ 
+      return res.status(201).json({
         status: 201,
         data: [{
           token,
@@ -45,7 +45,7 @@ const User = {
       return res.status(400).json(error);
     }
   },
-  
+
 
   async login(req, res) {
     const text = 'SELECT * FROM users WHERE email = $1';
@@ -59,7 +59,7 @@ const User = {
       }
 
       const token = Helper.generateToken(rows[0].id);
-      return res.status(200).json({             
+      return res.status(200).json({
         status: 200,
         data: [{
           token,

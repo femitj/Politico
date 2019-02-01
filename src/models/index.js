@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL 
+  connectionString: process.env.DATABASE_URL,
 });
 
 export default {
-  query(text, params){
+  query(text, params) {
     return new Promise((resolve, reject) => {
       pool.query(text, params)
         .then((res) => {
@@ -17,7 +17,7 @@ export default {
         })
         .catch((err) => {
           reject(err);
-        })
-      })
-    }
-  }
+        });
+    });
+  },
+};
