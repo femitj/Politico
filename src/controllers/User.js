@@ -60,7 +60,7 @@ const User = {
 
       const token = Helper.generateToken(rows[0].id);
       return res.status(200).send({             
-        status: 201,
+        status: 200,
         data: [{
           token,
           user: {

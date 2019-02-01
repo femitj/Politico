@@ -63,7 +63,7 @@ class PartyController {
       }
       return res.status(200).send({
         status: 200,
-        message: '/id exists, Political party found',
+        message: `Id:${req.params.id} exists, Political party found`,
         data: [{
           id: rows[0].id,
           name: rows[0].name,

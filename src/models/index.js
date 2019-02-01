@@ -9,7 +9,7 @@ const pool = new Pool({
 });
 
 export default {
-  query(text, params) {
+  query(text, params){
     return new Promise((resolve, reject) => {
       pool.query(text, params)
         .then((res) => {
@@ -17,7 +17,7 @@ export default {
         })
         .catch((err) => {
           reject(err);
-        });
-    });
-  },
-};
+        })
+      })
+    }
+  }

@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js --exec babel-node",
+    "test": "npm run drop-tables && npm run create-tables && nyc --reporter=html --reporter=text mocha --compilers js:babel-register tests/index --exit",
     "serve": "babel-node src/server.js",
     "dev-start": "babel-watch ./src/server.js",
     "build": "babel src -d dist",
     "deploy": "gh-pages -d UI",
-    "db": "node ./src/models/database.js createAllTables",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov yarn test",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "create-tables": "babel-node src/models/createTables && babel-node ./src/models/database.js createAdmin",
+    "drop-tables": "babel-node src/models/dropTables"
   },
   "repository": {
     "type": "git",

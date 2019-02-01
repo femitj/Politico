@@ -7,7 +7,7 @@ import VoteController from '../controllers/Votes';
 import ResultController from '../controllers/results';
 import Auth from '../middleware/Auth';
 import checkSignUpInput from '../helpers/checkSignUpInput';
-import checkSignInInput from '../helpers/signInInput';
+import checkUser from '../helpers/checkUser';
 
 // route handler
 const router = express.Router();
@@ -25,8 +25,8 @@ router.get('/api/v1/offices', Auth.verifyToken, OfficeController.getAllOffices);
 router.get('/api/v1/offices/:id', Auth.verifyToken, OfficeController.getOffice);
 
 // Users routes
-router.post('/api/v1/users', checkSignUpInput, userController.create);
-router.post('/api/v1/login', checkSignInInput, userController.login);
+router.post('/api/v1/auth/signup', checkUser, checkSignUpInput, userController.create);
+router.post('/api/v1/auth/login', checkUser, userController.login);
 
 // Candidate routes
 router.post('/office/:id/register', Auth.verifyToken, CandidateController.create);
