@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js --exec babel-node",
-    "test": "npm run drop-tables && npm run create-tables && mocha tests/ --timeout=20000 --require babel-register --exit",
+    "test": "npm run drop-tables && npm run create-tables && mocha --compilers js:babel-register tests/ || true",
     "serve": "babel-node src/server.js",
     "dev-start": "babel-watch ./src/server.js",
     "build": "babel src -d dist",
