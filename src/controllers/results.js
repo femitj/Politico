@@ -17,14 +17,14 @@ class result {
           error: 'Political office not found',
         });
       }
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
         message: 'Election results',
         data: rows,
       });
     } 
     catch (error) {
-      return res.status(400).send(error)
+      return res.status(400).json(error);
     }
   }
 }

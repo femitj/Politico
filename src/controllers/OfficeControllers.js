@@ -17,7 +17,7 @@ class OfficeController {
  
     try {
       const { rows } = await db.query(createQuery, values);
-      return res.status(201).send({
+      return res.status(201).json({
         status: 201,
         message: 'Political office created',
         data: [{
@@ -28,7 +28,7 @@ class OfficeController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 
@@ -37,7 +37,7 @@ class OfficeController {
     const getAllOffices = 'SELECT * FROM offices where createdBy = $1';
     try {
       const { rows, rowCount } = await db.query(getAllOffices, [req.user.id]);
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
         message: 'All political office record successfully retrieved',
         data: [{
@@ -46,7 +46,7 @@ class OfficeController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 
@@ -61,7 +61,7 @@ class OfficeController {
           error: 'Political office not found',
         });
       }
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
         message: '/id exists, Political office found',
         data: [{
@@ -72,7 +72,7 @@ class OfficeController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error)
+      return res.status(400).json(error);
     }
   }
 }
