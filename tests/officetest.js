@@ -21,14 +21,13 @@ const user = {
 
 let admintoken;
 
-const party = {
-  name: 'ADD',
-  hqAddress: 'ikeja',
-  logourl: 'google.com',
+const office = {
+  type: 'ADD',
+  name: 'ikeja',
   createdOn: '1/31/2019',
 };
 
-// Testing endpoint for Political party
+// Tests for Political Office
 describe('POST api/v1/auth/login', () => {
   it('should successfully log a user in if login inputs are valid', (done) => {
     chai.request(app)
@@ -41,7 +40,7 @@ describe('POST api/v1/auth/login', () => {
         admintoken = body.data[0].token;
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
-        //expect(body.status).to.be.equals(200);
+        expect(body.status).to.be.equals(200);
         expect(body.data[0]).to.haveOwnProperty('token');
         expect(body.data[0]).to.haveOwnProperty('user');
         expect(body.data[0].user).to.be.an('object');
@@ -51,12 +50,36 @@ describe('POST api/v1/auth/login', () => {
   });
 });
 
-describe('POST api/v1/parties', () => {
-  it('should create a record if user input is valid', (done) => {
+describe('POST api/v1/offices', () => {
+  it('should create office if user input is valid', (done) => {
     chai.request(app)
-      .post('/api/v1/parties/')
+      .post('/api/v1/offices/')
       .set({ 'x-access-token': admintoken })
-      .send(party)
+      .send(office)
+      .end((err, res) => {
+        if (err) done();
+        const { body } = res;
+        expect(body).to.be.an('object');
+        expect(body.status).to.be.a('number');
+        expect(body.status).to.be.equals(201);
+        expect(body.data[0]).to.be.an('object');
+        expect(body.message).to.be.a('string');
+        expect(body.data[0]).to.haveOwnProperty('id' && 'name');
+        done();
+      });
+  });
+});
+
+describe('POST api/v1/offices', () => {
+  it('should create office', (done) => {
+    chai.request(app)
+      .post('/api/v1/offices/')
+      .set({ 'x-access-token': admintoken })
+      .send({
+        type: 'Federal',
+        name: 'President',
+        createdOn: '1/31/2019',
+      })
       .end((err, res) => {
         if (err) done();
         const { body } = res;
@@ -72,10 +95,10 @@ describe('POST api/v1/parties', () => {
 });
 
 
-describe('GET api/v1/parties', () => {
+describe('GET api/v1/offices', () => {
   it('should return an empty array and status 200 if records are empty', (done) => {
     chai.request(app)
-      .get('/api/v1/parties')
+      .get('/api/v1/offices')
       .set({ 'x-access-token': admintoken })
       .end((err, res) => {
         if (err) done();
@@ -88,10 +111,10 @@ describe('GET api/v1/parties', () => {
   });
 });
 
-describe('GET api/v1/parties/:id', () => {
-  it('should return a party record with a specific id', (done) => {
+describe('GET api/v1/offices/:id', () => {
+  it('should return a office record with a specific id', (done) => {
     chai.request(app)
-      .get('/api/v1/parties/1')
+      .get('/api/v1/offices/1')
       .set({ 'x-access-token': admintoken })
       .end((err, res) => {
         if (err) done();
@@ -99,43 +122,7 @@ describe('GET api/v1/parties/:id', () => {
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(200);
-        expect(body.data[0]).to.haveOwnProperty('id' && 'name' && 'hqAddress' && 'logo');
-        done();
-      });
-  });
-});
-
-describe('PATCH api/v1/parties/:id/', () => {
-  it('should edit the location value of a record if it exists', (done) => {
-    chai.request(app)
-      .patch('/api/v1/parties/1')
-      .set({ 'x-access-token': admintoken })
-      .send({
-        name: 'OOP',
-      })
-      .end((err, res) => {
-        if (err) done();
-        const { body } = res;
-        expect(body).to.be.an('object');
-        expect(body.status).to.be.equals(201);
-        expect(body).to.haveOwnProperty('data');
-        expect(body).to.haveOwnProperty('message');
-        done();
-      });
-  });
-});
-
-describe('Delete api/v1/parties/:id/', () => {
-  it('should delete a record by id if it exists', (done) => {
-    chai.request(app)
-      .delete('/api/v1/parties/1')
-      .set({ 'x-access-token': admintoken })
-      .end((err, res) => {
-        if (err) done();
-        const { body } = res;
-        expect(body).to.be.an('object');
-        expect(body.status).to.be.equals(200);
-        expect(body).to.haveOwnProperty('message');
+        expect(body.data[0]).to.haveOwnProperty('id' && 'name' && 'type');
         done();
       });
   });
