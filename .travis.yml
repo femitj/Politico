@@ -15,6 +15,9 @@ before_script:
 
 after_success:
  - npm run coverage
+
+ env: 
+  - DATABASE_URL=postgres://postgres:yankee123@127.0.0.1:5432/politico_db
 script:
   - "npm run test"
  
