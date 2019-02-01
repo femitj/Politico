@@ -2,9 +2,11 @@
 import 'babel-polyfill';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import supertest from 'supertest';
 import app from '../src/server';
 
 const { expect } = chai;
+const request = supertest(app);
 
 chai.use(chaiHttp);
 
@@ -78,7 +80,7 @@ describe('GET api/v1/parties', () => {
       .get('/api/v1/parties')
       .set({ 'x-access-token': admintoken })
       .end((err, res) => {
-        if (err) done();
+        if (err) throw err;
         const { body } = res;
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
