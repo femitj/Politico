@@ -18,7 +18,7 @@ class PartyController {
  
     try {
       const { rows } = await db.query(createQuery, values);
-      return res.status(201).send({
+      return res.status(201).json({
         status: 201,
         message: 'Political party created',
         data: [{
@@ -28,7 +28,7 @@ class PartyController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 
@@ -37,7 +37,7 @@ class PartyController {
     const getAllParties = 'SELECT * FROM parties where createdBy = $1';
     try {
       const { rows, rowCount } = await db.query(getAllParties, [req.user.id]);
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
         message: 'All political party record successfully retrieved',
         data: [{
@@ -46,7 +46,7 @@ class PartyController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 
@@ -61,9 +61,9 @@ class PartyController {
           error: 'Political party not found',
         });
       }
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
-        message: '/id exists, Political party found',
+        message: `Id:${req.params.id} exists, Political party found`,
         data: [{
           id: rows[0].id,
           name: rows[0].name,
@@ -72,7 +72,7 @@ class PartyController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error)
+      return res.status(400).json(error)
     }
   }
 
@@ -87,7 +87,7 @@ class PartyController {
     ];
     try {
       const { rows } = await db.query(updateNameQuery, values);
-      return res.status(201).send({
+      return res.status(201).json({
         status: 201,
         message: "Political party's name updated",
         data: [{
@@ -97,7 +97,7 @@ class PartyController {
       });
     }
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 
@@ -118,7 +118,7 @@ class PartyController {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 }

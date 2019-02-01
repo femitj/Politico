@@ -17,7 +17,7 @@ class vote {
 
     try {
       const { rows } = await db.query(createQuery, values);
-      return res.status(201).send({
+      return res.status(201).json({
         status: 201,
         message: 'vote created',
         data: [{
@@ -29,7 +29,7 @@ class vote {
       });
     } 
     catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   }
 }

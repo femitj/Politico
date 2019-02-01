@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 dontenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL 
 });
 
 pool.on('connect', () => {
@@ -173,7 +173,11 @@ const createAllTables = () => {
   createOffice();
   createCandidate();
   createVote();
-};    
+};
+
+const dropAllTables = () => {
+  dropUserTable();
+};
 
 module.exports = {
   createAllTables,
@@ -183,7 +187,8 @@ module.exports = {
   createCandidate,
   createVote,
   createResult,
-  createAdmin, 
+  createAdmin,
+  dropAllTables, 
 };
 
 require('make-runnable');

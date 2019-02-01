@@ -23,7 +23,7 @@ const User = {
     try {
       const { rows } = await db.query(createQuery, values);
       const token = Helper.generateToken(rows[0].id);
-      return res.status(201).send({ 
+      return res.status(201).json({ 
         status: 201,
         data: [{
           token,
@@ -40,9 +40,9 @@ const User = {
       });
     } catch (error) {
       if (error.routine === '_bt_check_unique') {
-        return res.status(400).send({ message: 'User with that EMAIL already exist' })
+        return res.status(400).json({ message: 'User with that EMAIL already exist' })
       }
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   },
   
@@ -52,15 +52,15 @@ const User = {
     try {
       const { rows } = await db.query(text, [req.body.email]);
       if (!rows[0]) {
-        return res.status(400).send({ message: 'The email you provided is incorrect' });
+        return res.status(400).json({ message: 'The email you provided is incorrect' });
       }
       if (!Helper.comparePassword(rows[0].password, req.body.password)) {
-        return res.status(400).send({ message: 'The password you provided is incorrect' });
+        return res.status(400).json({ message: 'The password you provided is incorrect' });
       }
 
       const token = Helper.generateToken(rows[0].id);
-      return res.status(200).send({             
-        status: 201,
+      return res.status(200).json({             
+        status: 200,
         data: [{
           token,
           user: {
@@ -75,7 +75,7 @@ const User = {
         }],
       });
     } catch (error) {
-      return res.status(400).send(error);
+      return res.status(400).json(error);
     }
   },
 
