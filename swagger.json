@@ -26,14 +26,28 @@
     },
     {
       "name": "Office",
-      "description": "Create, read, update and delete political office",
+      "description": "Create, read political office",
       "externalDocs": {
         "url": "https://politico-app.herokuapp.com/api/v1/"
       }
     },
     {
       "name": "Candidates",
-      "description": "Create, read, update and delete political office",
+      "description": "Register as a candidate",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Vote",
+      "description": "Vote for your candidate of choice",
+      "externalDocs": {
+        "url": "https://politico-app.herokuapp.com/api/v1/"
+      }
+    },
+    {
+      "name": "Results",
+      "description": "User can fetch result of election",
       "externalDocs": {
         "url": "https://politico-app.herokuapp.com/api/v1/"
       }
@@ -51,6 +65,7 @@
         ],
         "summary": "Create a new party record",
         "description": "Admin can create party records",
+        "operationId": "addPartyRecord",
         "consumes": [
           "application/json"
         ],
@@ -69,7 +84,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Political party created successfully",
             "schema": {
               "$ref": "#/definitions/SuccessRequest"
@@ -99,7 +114,7 @@
               "$ref": "#/definitions/SuccessRequest"
             }
           },
-          "404": {
+          "204": {
             "description": "Party not found",
             "schema": {
               "$ref": "#/definitions/BadRequest"
@@ -115,6 +130,7 @@
         ],
         "summary": "Find party record by ID from database",
         "description": "Returns a specific record",
+        "operationId": "getrecordById",
         "produces": [
           "application/json"
         ],
@@ -291,6 +307,231 @@
           },
           "404": {
             "description": "User not Found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+      "/candidate": {
+        "post": {
+          "tags": [
+            "Candidates"
+          ],
+          "summary": "Registers as a candidate",
+          "description": "User can register as a candidate",
+          "operationId": "addcandidateRecord",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "user can register as a candidate",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/candidate"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "user can register as a candidate created successfully",
+              "schema": {
+                "$ref": "#/definitions/SuccessRequest"
+              }
+            },
+            "404": {
+              "description": "Unauthorised",
+              "schema": {
+                "$ref": "#/definitions/BadRequest"
+              }
+            }
+          }
+        }
+    },
+    "/vote": {
+      "post": {
+        "tags": [
+          "Vote"
+        ],
+        "summary": "users can vote",
+        "description": "User can vote",
+        "operationId": "addVoteRecord",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user's can vote",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user can vote successfully",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Unauthorised",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+      "/results": {
+        "post": {
+          "tags": [
+            "Results"
+          ],
+          "summary": "users get results to election",
+          "description": "User can fetch results to election",
+          "operationId": "addresults",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "user's can get results to election",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/voteResults"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "user can get results to electioin successfully",
+              "schema": {
+                "$ref": "#/definitions/VoteSuccess"
+              }
+            },
+            "404": {
+              "description": "Unauthorised",
+              "schema": {
+                "$ref": "#/definitions/BadRequest"
+              }
+            }
+          }
+        }
+      },
+    "/offices": {
+      "post": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "Create a new office record",
+        "description": "Admin can create office records",
+        "operationId": "addOfficeRecord",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "political office admin creates",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/offices"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Political office created successfully",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "Unauthorised",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "GET all political office records",
+        "description": "Return all office records from the database",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetch all office record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "204": {
+            "description": "office not found",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          }
+        }
+      }
+    },
+    "/office/<id>": {
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "summary": "Find office record by ID from database",
+        "description": "Returns a specific record",
+        "operationId": "getrecordById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID does not exists",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful gets office record",
+            "schema": {
+              "$ref": "#/definitions/SuccessRequest"
+            }
+          },
+          "404": {
+            "description": "office record not found",
             "schema": {
               "$ref": "#/definitions/BadRequest"
             }

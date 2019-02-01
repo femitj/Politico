@@ -1,5 +1,4 @@
 import db from '../models/index';
-import Helper from '../helpers/Helper';
 
 class PartyController {
   static async createParty(req, res) {
@@ -15,7 +14,7 @@ class PartyController {
       req.user.id,
       req.body.createdOn,
     ];
- 
+
     try {
       const { rows } = await db.query(createQuery, values);
       return res.status(201).json({
@@ -26,8 +25,7 @@ class PartyController {
           name: rows[0].name,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }
@@ -44,8 +42,7 @@ class PartyController {
           data: rows,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }
@@ -70,8 +67,7 @@ class PartyController {
           logo: rows[0].logourl,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error)
     }
   }
@@ -95,14 +91,13 @@ class PartyController {
           name: rows[0].name,
         }],
       });
-    }
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }
 
   // delete a record
-  static async deleteParty(req, res) {		
+  static async deleteParty(req, res) {
     const deleteQuery = 'DELETE FROM parties WHERE party_id = $1 AND createdBy = $2 returning *';
     try {
       const { rows } = await db.query(deleteQuery, [req.params.id, req.user.id]);
@@ -116,8 +111,7 @@ class PartyController {
         status: 200,
         message: 'Political party deleted',
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }

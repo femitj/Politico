@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 dontenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL 
+  connectionString: process.env.DATABASE_URL,
 });
 
 pool.on('connect', () => {
@@ -62,8 +62,8 @@ const createAdmin = () => {
 
 // Political party table
 const createParty = () => {
-  const queryTextParty =
-    `CREATE TABLE IF NOT EXISTS
+  const queryTextParty = `
+  CREATE TABLE IF NOT EXISTS
       parties(
         party_id SERIAL PRIMARY KEY UNIQUE NOT NULL,
         name VARCHAR(128) NOT NULL,
@@ -85,8 +85,8 @@ const createParty = () => {
 
 // Political office table
 const createOffice = () => {
-  const queryTextOffice =
-    `CREATE TABLE IF NOT EXISTS
+  const queryTextOffice = `
+  CREATE TABLE IF NOT EXISTS
       offices(
         office_id SERIAL PRIMARY KEY UNIQUE NOT NULL,
         type VARCHAR(128) NOT NULL,
@@ -107,8 +107,8 @@ const createOffice = () => {
 
 //  candidates table
 const createCandidate = () => {
-  const queryTextCandidate =
-    `CREATE TABLE IF NOT EXISTS
+  const queryTextCandidate = `
+  CREATE TABLE IF NOT EXISTS
       candidates(
         politician_id SERIAL UNIQUE,
         office INTEGER REFERENCES offices(office_id),
@@ -125,11 +125,11 @@ const createCandidate = () => {
       pool.end();
     });
 };
-      
+
 //  votes table
 const createVote = () => {
-  const queryTextVote =
-    `CREATE TABLE IF NOT EXISTS
+  const queryTextVote = `
+  CREATE TABLE IF NOT EXISTS
       votes(
         vote_id SERIAL UNIQUE,
         office INTEGER REFERENCES offices(office_id),
@@ -158,7 +158,7 @@ const createResult = () => {
       candidate INTEGER UNIQUE REFERENCES candidates(politician_id),
       result INTEGER NOT NULL
     )`;
-  
+
   pool.query(queryTextResult)
     .then(() => {
       pool.end();

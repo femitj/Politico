@@ -21,8 +21,6 @@ const userOne = {
 };
 
 
-let token;
-
 // authentication routes tests
 
 describe('Create a user without any value', () => {

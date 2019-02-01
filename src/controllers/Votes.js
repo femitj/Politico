@@ -27,8 +27,7 @@ class vote {
           voter: rows[0].voter,
         }],
       });
-    } 
-    catch (error) {
+    } catch (error) {
       return res.status(400).json(error);
     }
   }
