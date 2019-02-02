@@ -3,14 +3,16 @@ import db from '../models/index';
 
 class result {
   static async getResult(req, res) {
-    const text = `SELECT DISTINCT ON (office) 
-                  office, candidate, count(candidate) result
-                  FROM votes
-                  GROUP BY ((office, candidate), (office))
-                  ORDER BY office, result DESC
-                  `;
+    const text = `SELECT
+    candidate,
+    COUNT (candidate)
+    FROM
+    votes
+    WHERE office=$1
+    GROUP BY
+    candidate`;
     try {
-      const { rows } = await db.query(text);
+      const { rows } = await db.query(text, [req.params.id]);
       if (!rows[0]) {
         return res.status(404).json({
           status: 404,

@@ -22,7 +22,7 @@ const user = {
 let admintoken;
 
 const party = {
-  name: 'ADD',
+  name: 'APC',
   hqAddress: 'ikeja',
   logourl: 'google.com',
   createdOn: '1/31/2019',

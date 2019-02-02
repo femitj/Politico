@@ -13,23 +13,22 @@ const Helper = {
   comparePassword(hashPassword, password) {
     return bcrypt.compareSync(password, hashPassword);
   },
-  
+
   // isValidEmail helper method
   isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   },
-  
   // Gnerate Token
   // @param {string} id
 
-  generateToken(id) {
+  generateToken(id, isAdmin) {
     const token = jwt.sign({
-      userId: id
+      id,
+      isAdmin,
     },
-    process.env.SECRET, { expiresIn: '7d' }
-    );
+    process.env.SECRET, { expiresIn: '7d' });
     return token;
-  }
-}
+  },
+};
 
 export default Helper;

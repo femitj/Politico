@@ -22,7 +22,8 @@ const User = {
 
     try {
       const { rows } = await db.query(createQuery, values);
-      const token = Helper.generateToken(rows[0].id);
+      const token = Helper.generateToken(rows[0].id, rows[0].isAdmin);
+
       return res.status(201).json({
         status: 201,
         data: [{
@@ -40,7 +41,7 @@ const User = {
       });
     } catch (error) {
       if (error.routine === '_bt_check_unique') {
-        return res.status(400).json({ message: 'User with that EMAIL already exist' })
+        return res.status(400).json({ message: 'User with that EMAIL already exist' });
       }
       return res.status(400).json(error);
     }
@@ -58,7 +59,7 @@ const User = {
         return res.status(400).json({ message: 'The password you provided is incorrect' });
       }
 
-      const token = Helper.generateToken(rows[0].id);
+      const token = Helper.generateToken(rows[0].id, rows[0].isAdmin);
       return res.status(200).json({
         status: 200,
         data: [{

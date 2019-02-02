@@ -12,7 +12,7 @@ class vote {
       req.body.office,
       req.body.candidate,
       req.user.id,
-      req.body.createdOn,
+      new Date().getTime(),
     ];
 
     try {

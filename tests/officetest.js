@@ -22,8 +22,8 @@ const user = {
 let admintoken;
 
 const office = {
-  type: 'ADD',
-  name: 'ikeja',
+  type: 'federal',
+  name: 'president',
   createdOn: '1/31/2019',
 };
 
