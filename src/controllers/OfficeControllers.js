@@ -12,7 +12,7 @@ class OfficeController {
       req.body.type,
       req.body.name,
       req.user.id,
-      req.body.createdOn,
+      new Date().getTime(),
     ];
 
     try {

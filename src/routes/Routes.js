@@ -12,29 +12,31 @@ import checkUser from '../helpers/checkUser';
 // route handler
 const router = express.Router();
 
+const apiVersion = '/api/v1/';
+
 // Political party routes
-router.post('/api/v1/parties', Auth.verifyToken, PartyController.createParty);
-router.get('/api/v1/parties', Auth.verifyToken, PartyController.getAllParties);
-router.get('/api/v1/parties/:id', Auth.verifyToken, PartyController.getParty);
-router.patch('/api/v1/parties/:id', Auth.verifyToken, PartyController.updatePartyName);
-router.delete('/api/v1/parties/:id', Auth.verifyToken, PartyController.deleteParty);
+router.post(`${apiVersion}parties`, Auth.verifyAdminToken, PartyController.createParty);
+router.get(`${apiVersion}parties`, Auth.verifyToken, PartyController.getAllParties);
+router.get(`${apiVersion}parties/:id`, Auth.verifyToken, PartyController.getParty);
+router.patch(`${apiVersion}parties/:id`, Auth.verifyAdminToken, PartyController.updatePartyName);
+router.delete(`${apiVersion}parties/:id`, Auth.verifyAdminToken, PartyController.deleteParty);
 
 // Political office routes
-router.post('/api/v1/offices', Auth.verifyToken, OfficeController.createOffice);
-router.get('/api/v1/offices', Auth.verifyToken, OfficeController.getAllOffices);
-router.get('/api/v1/offices/:id', Auth.verifyToken, OfficeController.getOffice);
+router.post(`${apiVersion}offices`, Auth.verifyAdminToken, OfficeController.createOffice);
+router.get(`${apiVersion}offices`, Auth.verifyToken, OfficeController.getAllOffices);
+router.get(`${apiVersion}offices/:id`, Auth.verifyToken, OfficeController.getOffice);
 
 // Users routes
-router.post('/api/v1/auth/signup', checkUser, checkSignUpInput, userController.create);
-router.post('/api/v1/auth/login', checkUser, userController.login);
+router.post(`${apiVersion}auth/signup`, checkUser, checkSignUpInput, userController.create);
+router.post(`${apiVersion}auth/login`, checkUser, userController.login);
 
 // Candidate routes
-router.post('/office/:id/register', Auth.verifyToken, CandidateController.create);
+router.post(`${apiVersion}office/:id/register`, Auth.verifyAdminToken, CandidateController.create);
 
 // Vote routes
-router.post('/api/v1/votes', Auth.verifyToken, VoteController.create);
+router.post(`${apiVersion}votes`, Auth.verifyToken, VoteController.create);
 
 // result route
-router.post('/office/:id/result', ResultController.getResult);
+router.get(`${apiVersion}office/:id/result`, ResultController.getResult);
 
 module.exports = router;

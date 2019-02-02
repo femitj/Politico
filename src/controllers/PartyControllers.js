@@ -12,7 +12,7 @@ class PartyController {
       req.body.hqAddress,
       req.body.logourl,
       req.user.id,
-      req.body.createdOn,
+      new Date().getTime(),
     ];
 
     try {
@@ -68,7 +68,7 @@ class PartyController {
         }],
       });
     } catch (error) {
-      return res.status(400).json(error)
+      return res.status(400).json(error);
     }
   }
 

@@ -10,8 +10,8 @@ class Candidate {
 
     const values = [
       req.body.office,
-      req.user.id,
-      req.body.createdOn,
+      req.params.id,
+      new Date().getTime(),
     ];
 
     try {
