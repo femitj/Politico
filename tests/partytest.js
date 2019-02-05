@@ -38,14 +38,14 @@ describe('POST api/v1/auth/login', () => {
         if (err) done();
         const { body } = res;
         // eslint-disable-next-line prefer-destructuring
-        admintoken = body.data[0].token;
+        admintoken = body.data.token;
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         //expect(body.status).to.be.equals(200);
-        expect(body.data[0]).to.haveOwnProperty('token');
-        expect(body.data[0]).to.haveOwnProperty('user');
-        expect(body.data[0].user).to.be.an('object');
-        expect(body.data[0].token).to.be.a('string');
+        expect(body.data).to.haveOwnProperty('token');
+        expect(body.data).to.haveOwnProperty('user');
+        expect(body.data.user).to.be.an('object');
+        expect(body.data.token).to.be.a('string');
         done();
       });
   });
@@ -63,9 +63,9 @@ describe('POST api/v1/parties', () => {
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(201);
-        expect(body.data[0]).to.be.an('object');
+        expect(body.data).to.be.an('object');
         expect(body.message).to.be.a('string');
-        expect(body.data[0]).to.haveOwnProperty('id' && 'name');
+        expect(body.data).to.haveOwnProperty('id' && 'name');
         done();
       });
   });
@@ -99,7 +99,7 @@ describe('GET api/v1/parties/:id', () => {
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(200);
-        expect(body.data[0]).to.haveOwnProperty('id' && 'name' && 'hqAddress' && 'logo');
+        expect(body.data).to.haveOwnProperty('id' && 'name' && 'hqAddress' && 'logourl');
         done();
       });
   });
@@ -117,7 +117,7 @@ describe('PATCH api/v1/parties/:id/', () => {
         if (err) done();
         const { body } = res;
         expect(body).to.be.an('object');
-        expect(body.status).to.be.equals(201);
+        expect(body.status).to.be.equals(200);
         expect(body).to.haveOwnProperty('data');
         expect(body).to.haveOwnProperty('message');
         done();

@@ -17,16 +17,17 @@ class PartyController {
 
     try {
       const { rows } = await db.query(createQuery, values);
+      const { id, name } = rows[0];
       return res.status(201).json({
         status: 201,
         message: 'Political party created',
-        data: [{
-          id: rows[0].id,
-          name: rows[0].name,
-        }],
+        data: {
+          id,
+          name,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -38,12 +39,10 @@ class PartyController {
       return res.status(200).json({
         status: 200,
         message: 'All political party record successfully retrieved',
-        data: [{
-          data: rows,
-        }],
+        data: rows,
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -58,17 +57,18 @@ class PartyController {
           error: 'Political party not found',
         });
       }
+      const { id, name, logourl } = rows[0];
       return res.status(200).json({
         status: 200,
         message: `Id:${req.params.id} exists, Political party found`,
-        data: [{
-          id: rows[0].id,
-          name: rows[0].name,
-          logo: rows[0].logourl,
-        }],
+        data: {
+          id,
+          name,
+          logourl,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -83,16 +83,17 @@ class PartyController {
     ];
     try {
       const { rows } = await db.query(updateNameQuery, values);
-      return res.status(201).json({
-        status: 201,
+      const { id, name } = rows[0];
+      return res.status(200).json({
+        status: 200,
         message: "Political party's name updated",
-        data: [{
-          id: rows[0].id,
-          name: rows[0].name,
-        }],
+        data: {
+          id,
+          name,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -112,7 +113,7 @@ class PartyController {
         message: 'Political party deleted',
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 }

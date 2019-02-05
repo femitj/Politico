@@ -17,18 +17,19 @@ class vote {
 
     try {
       const { rows } = await db.query(createQuery, values);
+      const { id, office, candidate, voter } = rows[0];
       return res.status(201).json({
         status: 201,
         message: 'vote created',
-        data: [{
-          id: rows[0].id,
-          office: rows[0].office,
-          candidate: rows[0].candidate,
-          voter: rows[0].voter,
-        }],
+        data: {
+          id,
+          office,
+          candidate,
+          voter,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 }

@@ -20,9 +20,9 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(doc));
 app.use(express.json());
 app.use('/', express.static('UI'));
 
-app.get('/api/v1', (req, res) => res.status(200).send({ message: 'YAY! Congratulations! Your first endpoint is working' }));
+//app.get('/api/v1', (req, res) => res.status(200).send({ message: 'YAY! Congratulations! Your first endpoint is working' }));
 
-app.use(routes);
+app.use('/api/v1', routes);
 
 const server = app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);

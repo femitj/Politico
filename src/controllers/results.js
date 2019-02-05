@@ -16,7 +16,7 @@ class result {
       if (!rows[0]) {
         return res.status(404).json({
           status: 404,
-          error: 'Political office not found',
+          error: 'No Election for the selected office',
         });
       }
       return res.status(200).json({
@@ -25,7 +25,7 @@ class result {
         data: rows,
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 }

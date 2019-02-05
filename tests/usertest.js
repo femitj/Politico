@@ -67,14 +67,14 @@ describe('POST api/v1/auth/login', () => {
       .end((err, res) => {
         const { body } = res;
         // eslint-disable-next-line prefer-destructuring
-        token = body.data[0].token;
+        token = body.data.token;
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(200);
-        expect(body.data[0]).to.haveOwnProperty('token');
-        expect(body.data[0]).to.haveOwnProperty('user');
-        expect(body.data[0].user).to.be.an('object');
-        expect(body.data[0].token).to.be.a('string');
+        expect(body.data).to.haveOwnProperty('token');
+        expect(body.data).to.haveOwnProperty('user');
+        expect(body.data.user).to.be.an('object');
+        expect(body.data.token).to.be.a('string');
         done();
       });
   });
@@ -109,7 +109,7 @@ describe('POST api/v1/votes', () => {
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(201);
-        expect(body.data[0]).to.be.an('object');
+        expect(body.data).to.be.an('object');
         expect(body.message).to.be.a('string');
         done();
       });
