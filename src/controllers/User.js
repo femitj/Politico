@@ -23,19 +23,18 @@ const User = {
     try {
       const { rows } = await db.query(createQuery, values);
       const token = Helper.generateToken(rows[0].id, rows[0].isAdmin);
+      const { id, email, firstname, lastname, othername } = rows[0];
 
       return res.status(201).json({
         status: 201,
         data: [{
           token,
           user: {
-            id: rows[0].id,
-            email: rows[0].email,
-            password: rows[0].password,
-            firstname: rows[0].firstname,
-            lastname: rows[0].lastname,
-            othername: rows[0].othername,
-            passportUrl: rows[0].passporturl,
+            id,
+            email,
+            firstname,
+            lastname,
+            othername,
           },
         }],
       });
@@ -43,7 +42,7 @@ const User = {
       if (error.routine === '_bt_check_unique') {
         return res.status(400).json({ message: 'User with that EMAIL already exist' });
       }
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -60,23 +59,23 @@ const User = {
       }
 
       const token = Helper.generateToken(rows[0].id, rows[0].isAdmin);
+      const { id, email, firstname, lastname, othername, passporturl } = rows[0];
       return res.status(200).json({
         status: 200,
-        data: [{
+        data: {
           token,
           user: {
-            id: rows[0].id,
-            email: rows[0].email,
-            password: rows[0].password,
-            firstname: rows[0].firstname,
-            lastname: rows[0].lastname,
-            othername: rows[0].othername,
-            passportUrl: rows[0].passporturl,
+            id,
+            email,
+            firstname,
+            lastname,
+            othername,
+            passporturl,
           },
-        }],
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   },
 

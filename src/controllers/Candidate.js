@@ -19,13 +19,13 @@ class Candidate {
       return res.status(201).json({
         status: 201,
         message: 'Candidate created',
-        data: [{
+        data: {
           user: rows[0].candidate,
           office: rows[0].office,
-        }],
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 }

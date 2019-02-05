@@ -5,7 +5,8 @@ const bcrypt = require('bcrypt');
 dontenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DB_URL_PROD || process.env.DATABASE_URL,
+  // ssl: true,
 });
 
 pool.on('connect', () => {

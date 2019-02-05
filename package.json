@@ -11,6 +11,7 @@
     "build": "babel src -d dist",
     "deploy": "gh-pages -d UI",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov yarn test",
+    "db": "babel-node src/models/dropTables && babel-node src/models/createTables && babel-node ./src/models/database.js createAdmin",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "create-tables": "babel-node src/models/createTables && babel-node ./src/models/database.js createAdmin",
     "drop-tables": "babel-node src/models/dropTables"

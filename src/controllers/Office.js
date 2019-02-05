@@ -17,17 +17,18 @@ class OfficeController {
 
     try {
       const { rows } = await db.query(createQuery, values);
+      const { id, type, name } = rows[0];
       return res.status(201).json({
         status: 201,
         message: 'Political office created',
-        data: [{
-          id: rows[0].id,
-          type: rows[0].type,
-          name: rows[0].name,
-        }],
+        data: {
+          id,
+          type,
+          name,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -39,13 +40,10 @@ class OfficeController {
       return res.status(200).json({
         status: 200,
         message: 'All political office record successfully retrieved',
-        data: [{
-          data: rows,
-        }],
+        data: rows,
       });
-    } 
-    catch (error) {
-      return res.status(400).json(error);
+    } catch (error) {
+      return res.status(500).json(error);
     }
   }
 
@@ -60,17 +58,18 @@ class OfficeController {
           error: 'Political office not found',
         });
       }
+      const { id, type, name } = rows[0];
       return res.status(200).json({
         status: 200,
         message: '/id exists, Political office found',
-        data: [{
-          id: rows[0].id,
-          type: rows[0].type,
-          name: rows[0].name,
-        }],
+        data: {
+          id,
+          type,
+          name,
+        },
       });
     } catch (error) {
-      return res.status(400).json(error);
+      return res.status(500).json(error);
     }
   }
 }

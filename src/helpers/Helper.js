@@ -5,23 +5,18 @@ const Helper = {
 
   // Hash Password Method
   // @returns {string} returns hashed password
-  hashPassword(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
-  },
+  hashPassword: password => bcrypt.hashSync(password, bcrypt.genSaltSync(8)),
 
   // compare Password
-  comparePassword(hashPassword, password) {
-    return bcrypt.compareSync(password, hashPassword);
-  },
+  comparePassword: (hashPassword, password) => bcrypt.compareSync(password, hashPassword),
 
   // isValidEmail helper method
-  isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  },
+  isValidEmail: email => /\S+@\S+\.\S+/.test(email),
+
   // Gnerate Token
   // @param {string} id
 
-  generateToken(id, isAdmin) {
+  generateToken: (id, isAdmin) => {
     const token = jwt.sign({
       id,
       isAdmin,
