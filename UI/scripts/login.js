@@ -8,20 +8,13 @@ const alertBoxCloser = document.getElementById('close-alert');
 let alertTextElement = alertBox.querySelector('p');
 const alertTitle = alertBox.querySelector('h5');
 
-/* alertBoxCloser.addEventListener('click', () => {
-  alertBox.style.display = 'none';
-}); */
+
 
 const a = () => { alertTextElement.innerText = " ", alertTitle.innerText = " " };
 function displayalert() {
   //alertBox.style.display = block;
-  setTimeout( a , 2000);
+  setTimeout( a , 4000);
 }
-
-/* // Timeout after 3 sec
-setTimeout(function () {
-  alertBox.style.display = none;
-}, 3000); */
 
 
 
@@ -62,7 +55,7 @@ loginButton.addEventListener('click', (e) => {
     }
   }
 
-   fetch('http://127.0.0.1:8080/api/v1/auth/login', options)
+   fetch('https://politico-app.herokuapp.com/api/v1/auth/login', options)
     .then(res => res.json())
     .then(res => {
       sessionStorage.setItem('userId', res.data.user.id);
