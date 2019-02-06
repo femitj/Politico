@@ -1,5 +1,5 @@
 #register-body{
-    background-color: white;
+  background-color: rgba(206, 206, 206, 0.3);
 }
 
 #register-area {
@@ -55,13 +55,12 @@
   }
 
 .register-box {
+    height: 450px;
     padding: 20px;
-    height: 400px;
     width: auto;
     border: 1px solid #8791a2;
     color: white;
     box-shadow: 5px 5px 10px -6px green;
-    position: relative;
 }
  
 .register-box {
@@ -94,12 +93,10 @@
   .register-div{
     display: flex;
     flex-direction: column;
-    height: 6.5rem;
     justify-content: space-evenly;
-    margin: 35px 0px 10px 0px;
   }
   input{
-    height: 3rem;
+    height: 2rem;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #8791a2;
@@ -107,19 +104,18 @@
     letter-spacing: 1px;
     font-weight: 200;
     font-size: 1.3rem;
-    margin: 20px 0px 20px 0px;
     color: black;
   }
   ::placeholder{
     color: #8791a2;
     font-weight: 150;
     font-size: 1.23rem;
-    letter-spacing: 1px;
-    opacity: .4;
+    letter-spacing: 2px;
+    opacity: .6;
   }
 
   button{
-    height: 3.5rem;
+    height: 2.5rem;
     width: 100%;
     margin-top: 25px;
     margin-bottom: 0px;
@@ -139,7 +135,12 @@ label{
 
 #user-logo{
     color: green;
-    font-size: 5em;
+    font-size: 3em;
+}
+
+.alert-div {
+  text-align: center;
+  color: red;
 }
 
 @media (max-width: 348px){
@@ -185,8 +186,5 @@ label{
 @media screen and (min-width: 321px) and (max-width: 480px) {
   section{
     width: 200%;
-  }
-  .register-box{
-    height: 500px;
   }
 }

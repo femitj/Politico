@@ -17,7 +17,6 @@
                 <div class="navigation__wrapper">
                     <div class='container'>
                     <div><a href="../index.html" id="header-title">Politico</a></div>
-                    <div class='nav-link'><a href="./user/user-dashboard.html">My Profile</a></div>
                     </div>
                 </div>
             </nav>
@@ -25,8 +24,8 @@
 
     <section>
         <div class="container">
-            <div class="notification-div" id="notification-div">
-                <div id="close-notification">
+            <div class="alert-div" id="alert-div">
+                <div id="close-alert">
                     <span>x</span>
                 </div>
                     <h5></h5>
@@ -34,7 +33,7 @@
             </div>
     
             
-        <form class="register-form" action='/UI/views/profile.html' method='GET'>
+        <form class="register-form">
 
             <div class="register-box">
 
@@ -53,13 +52,19 @@
                 <input type="password" placeholder="&#10002; Password" id="password" name="password" required>
             </div>
             <div class="register-div">
-                <input type="text" placeholder="&#9998; Username" id="username" name="username" required>
+                <input type="password" placeholder="&#10002; Confirm Password" id="confirm-password" name="confirm-password" required>
             </div>
             <div class="register-div">
                 <input type="text" placeholder="&#9998; Firstname" id="firstname" name="firstname" required>
             </div>
             <div class="register-div">
-                <input type="text" placeholder="&#9998; Lastname" id="Lastname" name="lastname" required>
+                <input type="text" placeholder="&#9998; Lastname" id="lastname" name="lastname" required>
+            </div>
+            <div class="register-div">
+                <input type="text" placeholder="&#9998; Othername" id="othername" name="othername" >
+            </div>
+            <div class="register-div">
+                <input type="number" placeholder="&#9998; Phone Number" id="phonenumber" name="phonenumber" required>
             </div>
             <div class="btn-div">
                 <button id="register-btn">Sign Up</button>
@@ -72,5 +77,6 @@
             </div>
 
     </section>
+<script src="../scripts/signup.js"></script>
 </body>
 </html>

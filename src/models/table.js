@@ -7,7 +7,7 @@ users(
   lastname TEXT,
   othername TEXT,
   phoneNumber VARCHAR(128) NOT NULL,
-  passportUrl VARCHAR(128) NOT NULL,
+  passportUrl VARCHAR(128),
   "isAdmin" BOOLEAN default FALSE
 )`;
 

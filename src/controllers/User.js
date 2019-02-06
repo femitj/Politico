@@ -27,7 +27,7 @@ const User = {
 
       return res.status(201).json({
         status: 201,
-        data: [{
+        data: {
           token,
           user: {
             id,
@@ -36,7 +36,7 @@ const User = {
             lastname,
             othername,
           },
-        }],
+        },
       });
     } catch (error) {
       if (error.routine === '_bt_check_unique') {
@@ -59,7 +59,7 @@ const User = {
       }
 
       const token = Helper.generateToken(rows[0].id, rows[0].isAdmin);
-      const { id, email, firstname, lastname, othername, passporturl } = rows[0];
+      const { id, email, firstname, lastname, othername, passporturl, isAdmin } = rows[0];
       return res.status(200).json({
         status: 200,
         data: {
@@ -71,6 +71,7 @@ const User = {
             lastname,
             othername,
             passporturl,
+            isAdmin,
           },
         },
       });
