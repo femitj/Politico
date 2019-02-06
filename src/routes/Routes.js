@@ -4,7 +4,7 @@ import PartyController from '../controllers/Party';
 import OfficeController from '../controllers/Office';
 import CandidateController from '../controllers/Candidate';
 import VoteController from '../controllers/Votes';
-import ResultController from '../controllers/Results';
+import ResultController from '../controllers/results';
 import Auth from '../middleware/Auth';
 import checkSignUpInput from '../middleware/checkSignUpInput';
 import checkUser from '../middleware/checkUser';
