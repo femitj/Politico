@@ -6,7 +6,7 @@ dontenv.config();
 
 const pool = new Pool({
   connectionString: process.env.DB_URL_PROD || process.env.DATABASE_URL,
-  // ssl: true,
+  ssl: true,
 });
 
 pool.on('connect', () => {
@@ -24,7 +24,7 @@ const createUserTable = () => {
         lastname TEXT,
         othername TEXT,
         phoneNumber VARCHAR(128) NOT NULL,
-        passportUrl VARCHAR(128) NOT NULL,
+        passportUrl VARCHAR(128),
         "isAdmin" BOOLEAN default FALSE
       )`;
 
