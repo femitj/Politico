@@ -17,7 +17,6 @@
                 <div class="navigation__wrapper">
                     <div class='container'>
                     <div><a href="index.html" id="header-title">Politico</a></div>
-                    <div class='nav-link'><a href="./views/user/user-dashboard.html">My Profile</a></div>
                     </div>
                 </div>
             </nav>
@@ -25,8 +24,8 @@
 
     <section>
         <div class="container">
-            <div class="notification-div" id="notification-div">
-                <div id="close-notification">
+            <div class="alert-div" id="alert-div">
+                <div id="close-alert">
                     <span>x</span>
                 </div>
                     <h5></h5>
@@ -34,7 +33,7 @@
             </div>
     
             
-        <form class="login-form" action='/UI/views/profile.html' method='GET'>
+        <form class="login-form" id="submit-form">
 
             <div class="login-box">
 
@@ -63,5 +62,6 @@
             </div>
 
     </section>
+  <script src="./scripts/login.js"></script>
 </body>
 </html>

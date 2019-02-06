@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import swaggerUI from 'swagger-ui-express';
+import cors from 'cors';
 import routes from './routes/Routes';
 import 'babel-polyfill';
 import doc from '../swagger.json';
@@ -17,10 +18,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // render swagger UI
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(doc));
 
+app.use(cors({
+  credentials: true,
+  method: ['GET', 'PATCH', 'POST', 'DELETE'],
+}));
+
 app.use(express.json());
 app.use('/', express.static('UI'));
 
-//app.get('/api/v1', (req, res) => res.status(200).send({ message: 'YAY! Congratulations! Your first endpoint is working' }));
+app.get('/api/v1', (req, res) => res.status(200).send({ message: 'YAY! Congratulations! Your first endpoint is working' }));
 
 app.use('/api/v1', routes);
 

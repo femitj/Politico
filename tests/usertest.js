@@ -46,10 +46,10 @@ describe('POST api/v1/auth/signup', () => {
         expect(body).to.be.an('object');
         expect(body.status).to.be.a('number');
         expect(body.status).to.be.equals(201);
-        expect(body.data[0]).to.haveOwnProperty('token');
-        expect(body.data[0]).to.haveOwnProperty('user');
-        expect(body.data[0].user).to.be.an('object');
-        expect(body.data[0].token).to.be.a('string');
+        expect(body.data).to.haveOwnProperty('token');
+        expect(body.data).to.haveOwnProperty('user');
+        expect(body.data.user).to.be.an('object');
+        expect(body.data.token).to.be.a('string');
         done();
       });
   });

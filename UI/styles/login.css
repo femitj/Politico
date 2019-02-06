@@ -140,6 +140,10 @@ label{
     font-size: 5em;
 }
 
+.alert-div {
+  text-align: center;
+  color: red;
+}
 
 @media (max-width: 348px){
   form{
