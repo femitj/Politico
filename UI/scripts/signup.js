@@ -84,7 +84,7 @@ signUpButton.addEventListener('click', (e) => {
       displayalert();
       //emptyInputFields();
       setTimeout(() => {
-        if (res.data.user) return window.location = 'http://' + document.location.host + '/views/user/user-dashboard.html';
+        if (res.data.user) return window.location = 'http://' + document.location.host + '/UI/views/user/user-dashboard.html';
       }, 2000);
     })
     .catch(err => {
