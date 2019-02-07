@@ -146,7 +146,6 @@ footer .contents{
 #gov-office{
   margin-top: 25px;
   border: 1px solid silver;
-  background-color: rgba(196, 196, 196, 0.1);
 }
 
 #edit-office{
@@ -173,8 +172,8 @@ footer .contents{
 #show-party{
   margin-top: 25px;
   padding: 15px;
-  border: 1px solid silver;
-  background-color: rgba(196, 196, 196, 0.1);
+  border: 1px solid rgba(0, 128, 0, 0.5);
+  background-color: white;
 }
 
 #show-party h2{
@@ -185,7 +184,7 @@ footer .contents{
 #party-form {
   max-height: 300px;
   width: 600px;
-  border: 1px solid rgba(196, 196, 196, 0.1);
+  border: 1px solid rgba(0, 128, 0, 0.5);
   padding: 25px;
   box-shadow: 0 5px 35px rgba(0,0,0,0.2);
   margin-bottom: 60px;
