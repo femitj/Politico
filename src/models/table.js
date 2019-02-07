@@ -16,8 +16,9 @@ CREATE TABLE IF NOT EXISTS
   parties(
     party_id SERIAL PRIMARY KEY UNIQUE NOT NULL,
     name VARCHAR(128) NOT NULL,
+    acronym VARCHAR(128) NOT NULL,
     hqAddress VARCHAR(128) NOT NULL,
-    logoUrl VARCHAR(128) NOT NULL,
+    logoUrl VARCHAR(128),
     createdBy INTEGER NOT NULL,
     createdOn VARCHAR(128) NOT NULL,
     FOREIGN KEY(createdBy) REFERENCES users(id) ON DELETE CASCADE 

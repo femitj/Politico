@@ -1,10 +1,10 @@
 input, select {
     display: block;
     width: 100%;
-    border: 3px solid silver;
+    border: 1px solid rgba(0, 128, 0, 0.5);
     padding: 5px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 3px;
     margin: 3px;
 }
 
@@ -22,15 +22,15 @@ table {
 td{
     text-align: center;
     padding: 15px;
-    border: 2px solid silver;
+    border: 0.5px solid rgba(0, 128, 0, 0.5);
 }
 tbody{
-    background: rgba(209, 209, 209, 0.5);
+    background: white;
     border-radius: 10px;
 }
 
 th {
-    border: 2px solid silver;
+    border: 0.5px solid rgba(0, 128, 0, 0.5);
     text-align: center;
     padding: 5px;
     background: white;
@@ -64,6 +64,10 @@ tbody td {
 
 #submitButton {
     margin-top: 10px;
+}
+
+#submitInput{
+    background: rgba(0, 128, 0, 0.5);
 }
 
 #isbn{

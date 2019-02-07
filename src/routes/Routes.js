@@ -8,13 +8,14 @@ import ResultController from '../controllers/results';
 import Auth from '../middleware/Auth';
 import checkSignUpInput from '../middleware/checkSignUpInput';
 import checkUser from '../middleware/checkUser';
+import checkPartyInput from '../middleware/checkPartyInput';
 
 // route handler
 const router = express.Router();
 
 
 // Political party routes
-router.post('/parties', Auth.verifyAdminToken, PartyController.createParty);
+router.post('/parties', Auth.verifyAdminToken, checkPartyInput, PartyController.createParty);
 router.get('/parties', Auth.verifyToken, PartyController.getAllParties);
 router.get('/parties/:id', Auth.verifyToken, PartyController.getParty);
 router.patch('/parties/:id', Auth.verifyAdminToken, PartyController.updatePartyName);

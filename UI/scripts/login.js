@@ -45,7 +45,6 @@ function verifyRequiredFields() {
 loginButton.addEventListener('click', (e) => {
   e.preventDefault();
   const { email = '', password = '' } = verifyRequiredFields();
-  //console.log('you"re here!');
    const options = {
     method: 'POST',
     mode: 'cors',
@@ -61,17 +60,15 @@ loginButton.addEventListener('click', (e) => {
       sessionStorage.setItem('userId', res.data.user.id);
       sessionStorage.setItem('token', res.data.token);
       sessionStorage.setItem('firstName', res.data.user.firstname);
-      //emailInput.value = '';
-      //passwordInput.value = '';
+      emailInput.value = '';
+      passwordInput.value = '';
       setTimeout(() => {
-        if (res.data.user.isAdmin) return window.location = 'http://' + document.location.host +  '/UI/views/admin/admin.html';
-        window.location = 'http://' + document.location.host + '/UI/views/user/user-dashboard.html'
+        if (res.data.user.isAdmin) return location.href = '../views/admin/admin.html';
+        location.href = '../views/user/user-dashboard.html'
       }, 2500);
     })
     .catch(err => {
-      //const endpointError = err.error;
       alertTitle.innerText = 'Username or Password does not exist.';
-      //alertTextElement.innerText = endpointError.error;
       return displayalert();
     })
 });

@@ -24,6 +24,14 @@ const Helper = {
     process.env.SECRET, { expiresIn: '7d' });
     return token;
   },
+
+  getAcronym: symbol => symbol
+    .toLowerCase()
+    .split(' ')
+    .filter(e => e !== 'of' && e !== 'and' && e !== 'for')
+    .map(e => e[0])
+    .join('')
+    .toUpperCase(),
 };
 
 export default Helper;
