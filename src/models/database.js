@@ -6,7 +6,7 @@ dontenv.config();
 
 const pool = new Pool({
   connectionString: process.env.DB_URL_PROD || process.env.DATABASE_URL,
-  ssl: true,
+  //ssl: true,
 });
 
 pool.on('connect', () => {
@@ -68,6 +68,7 @@ const createParty = () => {
       parties(
         party_id SERIAL PRIMARY KEY UNIQUE NOT NULL,
         name VARCHAR(128) NOT NULL,
+        acronym VARCHAR(128) NOT NULL,
         hqAddress VARCHAR(128) NOT NULL,
         logoUrl VARCHAR(128) NOT NULL,
         createdBy INTEGER NOT NULL,

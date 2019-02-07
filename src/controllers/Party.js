@@ -1,14 +1,17 @@
 import db from '../models/index';
+import Helper from '../helpers/Helper';
 
 class PartyController {
   static async createParty(req, res) {
+    const acr = Helper.getAcronym(req.body.name);
     const createQuery = `INSERT INTO
-    parties(name, hqAddress, logoUrl, createdBy, createdOn)
-    VALUES($1, $2, $3, $4, $5)
+    parties(name, acronym, hqAddress, logoUrl, createdBy, createdOn)
+    VALUES($1, $2, $3, $4, $5, $6)
     returning *`;
 
     const values = [
       req.body.name,
+      acr,
       req.body.hqAddress,
       req.body.logourl,
       req.user.id,

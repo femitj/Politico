@@ -137,17 +137,15 @@ h4{
 }
 
 #vote-section{
-  margin-top: 10rem;
   height: 300px;
 }
 
 #politician-section{
   margin-top: 5rem;
   background-color: rgba(206, 206, 206, 0.3); 
-  border: 0.5px solid silver;
+  border: 0.5px solid rgb(156, 142, 142);
   width: 80%;
   margin: auto;
-  height: 150px;
 }
 
 #politician-section span{
@@ -168,27 +166,43 @@ h4{
     width: 120px ;
   }
   .dropdown {
-    margin-right: 35px;
+    margin-right: 55px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 580px) {
   /* comes into effect for screens between 321 and 480 pixels (inclusive) */
   .container {
-    width: 320px ;
-  }
-  .dropdown {
-    margin-right: 35px;
+    width: 100%;
   }
   #party-section{
-    margin-bottom: 15rem;
+    margin-bottom: 5rem;
+  }
+  .party-wrapper{
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+  .votes-count{
+    margin-left: 25%;
+    padding: 40px 40px 30px 40px;
+    width: 90px;
+  }
+  #vote-section{
+    margin-top: 15rem;
   }
 }
 @media screen and (min-width: 481px) {
   /* comes into effect for screens larger than or equal to 481 pixels */
   .container {
-    width: 480px ;
+    width: 100%;
   }
   .dropdown {
     margin-right: 35px;
+  }
+  .votes-count{
+    padding: 40px 40px 30px 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 90px;
   }
 }

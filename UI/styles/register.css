@@ -1,5 +1,5 @@
 #register-body{
-  background-color: rgba(206, 206, 206, 0.3);
+  background-color: white;
 }
 
 #register-area {
@@ -82,7 +82,7 @@
   }
   
   .register-box p {
-    color: silver;
+    color: black;
   }
   
   .register-box a:hover {

@@ -1,4 +1,5 @@
-const url = 'https://politico-app.herokuapp.com/api/v1/';
+//const url = 'https://politico-app.herokuapp.com/api/v1/';
+const url = 'http://localhost:8080/api/v1/';
 
 function resHandler(res) {
   return res.json().then(data => {

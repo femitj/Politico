@@ -109,3 +109,22 @@ deleteReportBtn.addEventListener('click', () => {
   const type = sessionStorage.getItem('type');
   deleteIncident(id, type);
 });
+
+
+function checkForTitle() {
+  notificationTitle.innerText = 'An error occured';
+  notificationTextElement.innerText = 'Title not provided';
+  displayNotification();
+}
+
+function checkForComment() {
+  notificationTitle.innerText = 'An error occured';
+  notificationTextElement.innerText = 'Comment not provided.';
+  displayNotification();
+}
+
+function checkForLocation() {
+  notificationTitle.innerText = 'An error occured';
+  notificationTextElement.innerText = 'Coordinates not provided.';
+  displayNotification();
+}

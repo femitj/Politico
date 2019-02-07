@@ -22,8 +22,8 @@ const user = {
 let admintoken;
 
 const party = {
-  name: 'APC',
-  hqAddress: 'ikeja',
+  name: 'People"s political party',
+  hqAddress: 'ikeja, lagos',
   logourl: 'google.com',
   createdOn: '1/31/2019',
 };

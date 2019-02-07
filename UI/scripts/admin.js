@@ -24,19 +24,36 @@ function displayalert() {
   setTimeout( a , 5000);
 }
 
+function checkName() {
+  alertTitle.innerText = 'An error occured';
+  alertTextElement.innerText = 'Name not provided';
+  displayalert();
+}
+
+function checkForHqAddress() {
+  alertTitle.innerText = 'An error occured';
+  alertTextElement.innerText = 'Hq Address not provided.';
+  displayalert();
+}
+
+function checkForLogoUrl() {
+  alertTitle.innerText = 'An error occured';
+  alertTextElement.innerText = 'Logo Url not provided.';
+  displayalert();
+}
+
 function partyFormCheck() {
   const name = nameInput.value.trim();
   const hqAddress = hqAddressInput.value.trim();
   const logourl = logoUrlInput.value.trim();
 
-  if (!name) return "checkName()";
-  if (!hqAddress) return "checkForTitle()";
-  if (!logourl) return "checkForComment()";
+  if (!name) return checkName();
+  if (!hqAddress) return checkForHqAddress();
+  if (!logourl) return checkForLogoUrl();
 
   return { name, hqAddress, logourl }
 }
 
-//partyForm.addEventListener('submit', (e) => {
   partyForm.addEventListener('submit', (e) => {
   e.preventDefault()
 

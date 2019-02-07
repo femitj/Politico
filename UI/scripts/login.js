@@ -63,8 +63,8 @@ loginButton.addEventListener('click', (e) => {
       emailInput.value = '';
       passwordInput.value = '';
       setTimeout(() => {
-        if (res.data.user.isAdmin) return window.location = 'http://' + document.location.host +  '/views/admin/admin.html';
-        window.location = 'http://' + document.location.host + '/views/user/user-dashboard.html'
+        if (res.data.user.isAdmin) return location.href = '../views/admin/admin.html';
+        location.href = '../views/user/user-dashboard.html'
       }, 2500);
     })
     .catch(err => {
