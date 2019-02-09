@@ -25,7 +25,7 @@ npm install
 
 ## Template UI
 
-You can see a hosted version of the template at [https://politico-app.herokuapp.com/](https://politico-app.heroukapp.com/)
+You can see a hosted version of the template at [https://politico-app.herokuapp.com/](https://politico-app.herokuapp.com/)
 
 
 ## Features
