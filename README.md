@@ -25,7 +25,7 @@ npm install
 
 ## Template UI
 
-You can see a hosted version of the template at [https://femitj.github.io/Politico/](https://abidex4yemi.github.io/meet-up-questioner/)
+You can see a hosted version of the template at [https://politico-app.herokuapp.com/](https://politico-app.heroukapp.com/)
 
 
 ## Features
